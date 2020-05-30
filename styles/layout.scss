@@ -1,9 +1,16 @@
 // See: https://sass-lang.com/
+$primaryBackground:  white;
+$primaryFontColor: black;
+// $primaryFontStyle: ;
+// $accentColor: ;
+// $accentFontStyle: ;
+
+
 
 body {
-  background-color: #EEE;
+  background-color: $primaryBackground;
 
   h1 {
-    color: #244751;
+    color: #e43bcb;
   }
 }

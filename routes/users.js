@@ -7,6 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
+const mapApi  = process.env.google_maps_api;
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
@@ -23,3 +24,4 @@ module.exports = (db) => {
   });
   return router;
 };
+
