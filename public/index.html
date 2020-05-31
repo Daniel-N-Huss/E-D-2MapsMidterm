@@ -8,10 +8,10 @@
     <meta charset="utf-8">
     <!--Styles, fonts, go here-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
 
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
@@ -20,34 +20,65 @@
     <div id="map"></div>
     <div id="mainframe">
       <div id="left">
-        <div class="pos-f-t">
           <nav class="navbar navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-
             </button>
-
           </nav>
           <ul class="collapse" id="navbarToggleExternalContent" >
 
               <li>Collapsed content</li>
               <li>Toggleable via the navbar brand.</li>
-
           </ul>
-
-        </div>
       </div>
-      <div id="middle"></div>
+      <div id="middle">
+        <main class="maps-container">
+          <div><h1>Header??</h1></div>
+          <section class="popular-maps">
+            <header>
+              <p class="map-title"> Best Breweries In Pomo</p>
+              <p class="owner-id">Emily Nicholas</p>
+            </header>
+            <div class="map-body">
+              <img src="https://static.vinepair.com/wp-content/uploads/2018/06/beer-bubble-cover-mobile.jpg" alt="Map Icon"><p class="map-description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium autem dolores quibusdam accusantium fugit excepturi repellendus totam vitae modi voluptatem voluptates nesciunt, explicabo earum aperiam sed, delectus aliquam sunt vero.
+            </p>
+          </div>
+          <footer>
+            <p> map created: 7 days ago </p>
+            <span class="material-icons"> favorite_border outlined_flag repeat</span>
+          </footer>
+        </section>
+        <section class="popular-maps">
+          <header>
+            <p class="map-title"> Best Breweries In Pomo</p>
+            <p class="owner-id">Emily Nicholas</p>
+          </header>
+          <div class="map-body">
+            <img src="https://static.vinepair.com/wp-content/uploads/2018/06/beer-bubble-cover-mobile.jpg" alt="Map Icon"><p class="map-description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium autem dolores quibusdam accusantium fugit excepturi repellendus totam vitae modi voluptatem voluptates nesciunt, explicabo earum aperiam sed, delectus aliquam sunt vero.
+          </p>
+        </div>
+        <footer>
+          <p> map created: 7 days ago </p>
+          <span class="material-icons"> favorite_border outlined_flag repeat</span>
+        </footer>
+      </section>
+      <section class="popular-maps">
+        <header>
+          <p class="map-title"> Best Breweries In Pomo</p>
+          <p class="owner-id">Emily Nicholas</p>
+        </header>
+        <div class="map-body">
+          <img src="https://static.vinepair.com/wp-content/uploads/2018/06/beer-bubble-cover-mobile.jpg" alt="Map Icon"><p class="map-description"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium autem dolores quibusdam accusantium fugit excepturi repellendus totam vitae modi voluptatem voluptates nesciunt, explicabo earum aperiam sed, delectus aliquam sunt vero.
+        </p>
+      </div>
+      <footer>
+        <p> map created: 7 days ago </p>
+        <span class="material-icons"> favorite_border outlined_flag repeat</span>
+      </footer>
+    </section>
+      </main>
+    </div>
       <div id="right"></div>
     </div>
-
-
-
-    <!-- <main class="container">
-      this is there the popular maps will go
-    </main>
-  </body>
-
-
   <!--Scripts can go here-->
 
   <script src="/scripts/maps.js" defer></script>

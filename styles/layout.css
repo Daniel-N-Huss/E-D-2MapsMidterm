@@ -4,23 +4,10 @@ html {
   padding: 0;
 }
 
-body {
-  background-color: hotpink;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body h1 {
-  color: black;
-}
-
 body #map {
   height: 100%;
   width: 100%;
   position: absolute;
-  top: 0;
-  left: 0;
   z-index: 0;
 }
 
@@ -28,25 +15,19 @@ body #mainframe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
   height: 100%;
   width: 100%;
 }
 
 body #mainframe #left {
-  width: 100%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  z-index: 100;
-  /* The z-index should be higher than Google Maps */
-  position: relative;
 }
 
 body #mainframe #left nav {
+  position: relative;
+  z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -56,12 +37,12 @@ body #mainframe #left nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 60px;
-  margin-left: 60px;
+  margin: 60px;
+  margin-bottom: 10px;
   padding: 10px;
   width: 300px;
   background: rgba(0, 0, 0, 0.4);
-  color: white;
+  color: WHITE;
   border-radius: 25px;
 }
 
@@ -69,7 +50,6 @@ body #mainframe #left nav button {
   border: none;
   height: 30px;
   width: 30px;
-  background-color: transparent;
   background-image: url("https://mdbootstrap.com/img/svg/hamburger7.svg?color=FFFFFF");
   margin-left: 10px;
 }
@@ -79,21 +59,94 @@ body #mainframe #left nav .logo {
 }
 
 body #mainframe #left ul {
+  position: relative;
+  z-index: 100;
   width: 300px;
   margin-left: 60px;
   background: rgba(0, 0, 0, 0.4);
-  color: white;
+  color: WHITE;
+  border-radius: 20px;
 }
 
 body #mainframe #middle {
-  width: 100%;
   -webkit-box-flex: 4;
       -ms-flex-positive: 4;
           flex-grow: 4;
 }
 
+body #mainframe #middle .maps-container {
+  position: relative;
+  z-index: 100;
+  margin-top: 100px;
+  width: 750px;
+  overflow: scroll;
+  height: 700px;
+  padding-right: 20px;
+}
+
+body #mainframe #middle .maps-container .popular-maps {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  color: WHITE;
+  margin-bottom: 20px;
+}
+
+body #mainframe #middle .maps-container .popular-maps:hover {
+  background-color: black;
+}
+
+body #mainframe #middle .maps-container .popular-maps header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 20px;
+  padding-bottom: 0px;
+}
+
+body #mainframe #middle .maps-container .popular-maps header .map-title {
+  font-weight: bold;
+}
+
+body #mainframe #middle .maps-container .popular-maps .map-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px;
+}
+
+body #mainframe #middle .maps-container .popular-maps .map-body img {
+  height: 100px;
+  width: 100px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+body #mainframe #middle .maps-container .popular-maps .map-body .map-description {
+  margin: 10px;
+}
+
+body #mainframe #middle .maps-container .popular-maps footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 10px;
+}
+
 body #mainframe #right {
-  width: 100%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
