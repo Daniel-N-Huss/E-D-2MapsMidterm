@@ -12,8 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 var map;
 function initMap() {
+  var LHL = {lat: 49.281394, lng: -123.115016};
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 49.2827, lng: -123.1207},
     zoom: 13
   });
+  var marker = new google.maps.Marker({position: LHL, map: map});
 }
+

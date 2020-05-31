@@ -36,30 +36,39 @@ body {
     width: 100%;
     #left {
       width: 100%;
+      flex-grow: 1;
       nav {
         display:flex;
-        // justify-content: space-between;
+        justify-content: space-between;
+        align-items: center;
         position: relative;
         z-index: 100; /* The z-index should be higher than Google Maps */
-        width: 10vw;
         margin: 60px;
         padding: 10px;
+        width: 300px;
         background:rgba(0, 0, 0, 0.4);
         color: white;
         border-radius: 25px;
         button {
           border: none;
+          height: 30px;
+          width: 30px;
           background-color: transparent;
-          display: flex;
-          justify-content: space-around;
+          background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=FFFFFF');
+          margin-left: 10px;
+        }
+        .logo {
+          margin-right: 10px;
         }
       }
     }
     #middle {
       width: 100%;
+      flex-grow: 4;
     }
     #right {
       width: 100%;
+      flex-grow: 1;
     }
 
   }
