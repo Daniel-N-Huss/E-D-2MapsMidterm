@@ -14,5 +14,25 @@ module.exports = (db) => {
     res.send('Maps api browse function coming!');
   });
 
+  router.get("/:id", (req, res) => {
+    //This will send back a map, and all of it's associated data with pins joined on.
+
+  });
+
+  router.post("/:id", (req, res) => {
+    //This will be a path for editing the data for the map in the database,
+    //likely containing form data to update
+  });
+
+  router.post("/", (req, res) => {
+
+    //This will be a path for creating a new map in the database -- the request should
+    //be holding some form data for us to convert into a database store
+  });
+
+  router.post("/:id/delete", (req, res) => {
+    // This will come from a delete button tied to a map
+  });
+
   return router;
 };
