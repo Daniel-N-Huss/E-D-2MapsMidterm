@@ -11,7 +11,10 @@ const router = express.Router();
 module.exports = (db) => {
 
   router.get("/", (req, res) => {
-    res.send('Maps api browse function coming!');
+    db.query(
+      `SELECT * FROM maps`
+    )
+      .then(maps => res.send(maps.rows));
   });
 
   router.get("/:id", (req, res) => {

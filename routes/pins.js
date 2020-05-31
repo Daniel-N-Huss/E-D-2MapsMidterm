@@ -14,27 +14,21 @@ module.exports = (db) => {
     const { mapId } = req.query;
 
     db.query(`
-    SELECT *
+    SELECT pins.id, pins.geo_location
     FROM pins
     JOIN maps ON maps.id = map_id
-    GROUP BY pins.id, maps.id
+    GROUP BY pins.id
     HAVING map_id = ${mapId}
     `)
-      .then(data => {
-        const pins = data.rows;
-        console.log("pins", pins);
-
-        res.json({pins});
-      })
+      .then(pins => res.send(pins.rows))
       .catch(err => {
         res
           .status(500)
           .json({ error: err.message });
-
+      });
 
     //this might send the pin id & the geo-location only, for the map to paint the pins onto itself?
     //Joined onto the map called
-      });
   });
 
   router.get('/:id', (req, res) => {
@@ -45,15 +39,14 @@ module.exports = (db) => {
       WHERE id = ${req.params.id}`
     ).then(data => {
       const pinData = data.rows[0];
-      res.json({pinData});
+      res.send(pinData);
     })
       .catch(err => {
         res
-          .status(500)
-          .json({ error: err.message });
-
-
+          .status(500);
       });
+
+
   });
 
   router.post('/:id', (req, res) => {
