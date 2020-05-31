@@ -29,17 +29,40 @@ body {
     left: 0;
     z-index: 0
   }
+  #mainframe {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    #left {
+      width: 100%;
+      nav {
+        display:flex;
+        // justify-content: space-between;
+        position: relative;
+        z-index: 100; /* The z-index should be higher than Google Maps */
+        width: 10vw;
+        margin: 60px;
+        padding: 10px;
+        background:rgba(0, 0, 0, 0.4);
+        color: white;
+        border-radius: 25px;
+        button {
+          border: none;
+          background-color: transparent;
+          display: flex;
+          justify-content: space-around;
+        }
+      }
+    }
+    #middle {
+      width: 100%;
+    }
+    #right {
+      width: 100%;
+    }
 
-  #nav {
-    display:flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 100; /* The z-index should be higher than Google Maps */
-    width: 300px;
-    margin: 60px;
-    padding: 10px;
-    background:rgba(0, 0, 0, 0.4);
-    color: white;
   }
+
 
 };

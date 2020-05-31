@@ -24,20 +24,52 @@ body #map {
   z-index: 0;
 }
 
-body #nav {
+body #mainframe {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+body #mainframe #left {
+  width: 100%;
+}
+
+body #mainframe #left nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   position: relative;
   z-index: 100;
   /* The z-index should be higher than Google Maps */
-  width: 300px;
+  width: 10vw;
   margin: 60px;
   padding: 10px;
   background: rgba(0, 0, 0, 0.4);
   color: white;
+  border-radius: 25px;
+}
+
+body #mainframe #left nav button {
+  border: none;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body #mainframe #middle {
+  width: 100%;
+}
+
+body #mainframe #right {
+  width: 100%;
 }
 /*# sourceMappingURL=layout.css.map */
