@@ -1,8 +1,43 @@
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #EEE;
+  background-color: hotpink;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body h1 {
-  color: #244751;
+  color: black;
 }
-sourceMappingURL=layout.css.map
+
+body #map {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+body #nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  z-index: 100;
+  /* The z-index should be higher than Google Maps */
+  width: 300px;
+  margin: 60px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+}
+/*# sourceMappingURL=layout.css.map */

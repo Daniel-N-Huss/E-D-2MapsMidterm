@@ -1,16 +1,45 @@
 // See: https://sass-lang.com/
-$primaryBackground:  white;
+$primaryBackground:  hotpink;
 $primaryFontColor: black;
 // $primaryFontStyle: ;
 // $accentColor: ;
 // $accentFontStyle: ;
 
-
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+};
 
 body {
   background-color: $primaryBackground;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 
   h1 {
-    color: #e43bcb;
+    color: $primaryFontColor;
   }
-}
+
+  #map {
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top: 0;
+    left: 0;
+    z-index: 0
+  }
+
+  #nav {
+    display:flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 100; /* The z-index should be higher than Google Maps */
+    width: 300px;
+    margin: 60px;
+    padding: 10px;
+    background:rgba(0, 0, 0, 0.4);
+    color: white;
+  }
+
+};
