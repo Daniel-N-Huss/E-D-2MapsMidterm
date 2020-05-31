@@ -18,5 +18,4 @@ function initMap() {
     zoom: 13
   });
   var marker = new google.maps.Marker({position: LHL, map: map});
-}
-
+};
