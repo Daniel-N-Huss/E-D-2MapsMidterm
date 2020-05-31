@@ -31,12 +31,12 @@ body {
     width: 100%;
     #left {
       flex-grow: 1;
+      z-index: 100; /* The z-index should be higher than Google Maps */
+      position: relative;
       nav {
         display:flex;
         justify-content: space-between;
         align-items: center;
-        position: relative;
-        z-index: 100; /* The z-index should be higher than Google Maps */
         margin-top: 60px;
         margin-left: 60px;
         padding: 10px;
@@ -55,6 +55,13 @@ body {
         .logo {
           margin-right: 10px;
         }
+
+      }
+      ul {
+        width: 300px;
+        margin-left: 60px;
+        background:rgba(0, 0, 0, 0.4);
+        color: white;
       }
     }
     #middle {
