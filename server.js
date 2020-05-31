@@ -9,7 +9,7 @@ const bodyParser = require("body-parser");
 const sass       = require("node-sass-middleware");
 const app        = express();
 const morgan     = require('morgan');
-// const mapApi     = process.env.google_maps_api;
+
 
 
 // PG database client/connection setup
@@ -38,12 +38,16 @@ app.use(express.static("public"));
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const usersRoutes = require("./routes/users");
-const widgetsRoutes = require("./routes/widgets");
+const mapsRoutes = require("./routes/maps");
+const pinsRoutes = require("./routes/pins");
+const favouritesRoutes = require("./routes/favourites");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
-app.use("/api/widgets", widgetsRoutes(db));
+app.use("/api/maps", mapsRoutes(db));
+app.use("/api/pins", pinsRoutes(db));
+app.use("/api/favourites", favouritesRoutes(db));
 // Note: mount other resources here, using the same pattern above
 
 
