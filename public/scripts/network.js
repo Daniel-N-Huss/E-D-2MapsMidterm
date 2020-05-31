@@ -14,7 +14,8 @@ const getMaps = function() {
   });
 };
 
-exports.getMaps = getMaps;
+
+
 
 
 //Pins Requests
@@ -23,27 +24,19 @@ const getMapPins = function(mapId) {
   return $.ajax({
     url: `/api/pins/map/`,
     data: { mapId }
-  })
-    .then(allPins => {
-      console.log("getMapPins -> allPins", allPins);
-
-      return allPins;
-    });
+  });
 };
 
 
 const getPinDetails = function(pinId) {
   return $.ajax({
     url: `/api/pins/${pinId}`,
-  }).then(data => {
-    console.log(data);
-    return data;
+  // }).then(data => {
+    // console.log(data);
+    // return data;
+  // });
   });
-    // .then(queryData => {
-      // JSON.parse(queryData);
-    // });
 };
-
 
 
 // Users Requests
