@@ -14,8 +14,11 @@ const getMaps = function() {
   });
 };
 
-
-
+const getMapDetails = function(mapId) {
+  return $.ajax({
+    url: `api/maps/${mapId}`
+  });
+};
 
 
 //Pins Requests
@@ -30,11 +33,7 @@ const getMapPins = function(mapId) {
 
 const getPinDetails = function(pinId) {
   return $.ajax({
-    url: `/api/pins/${pinId}`,
-  // }).then(data => {
-    // console.log(data);
-    // return data;
-  // });
+    url: `/api/pins/${pinId}`
   });
 };
 
@@ -44,3 +43,12 @@ const getPinDetails = function(pinId) {
 
 
 // Favourites Requests
+
+const getFavouriteMapsByUserId = function(userId) {
+  return $.ajax({
+    url: `/api/favourites/user/`,
+    data: { userId }
+  });
+};
+
+getFavouriteMapsByUserId(1).then(x => console.log(x));
