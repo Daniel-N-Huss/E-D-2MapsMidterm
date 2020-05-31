@@ -9,16 +9,51 @@ const router = express.Router();
 
 module.exports = (db) => {
 
-  router.get('/', (req, res) => {
-    res.send('Hello from the future pins route');
+  //retrieve all pins for a map
+  router.get('/map/', (req, res) => {
+    const { mapId } = req.query;
+
+    db.query(`
+    SELECT *
+    FROM pins
+    JOIN maps ON maps.id = map_id
+    GROUP BY pins.id, maps.id
+    HAVING map_id = ${mapId}
+    `)
+      .then(data => {
+        const pins = data.rows;
+        console.log("pins", pins);
+
+        res.json({pins});
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+
+
     //this might send the pin id & the geo-location only, for the map to paint the pins onto itself?
     //Joined onto the map called
+      });
   });
 
   router.get('/:id', (req, res) => {
-    res.send('This will send all the details of a pin for when a pin is clicked');
-    //Full details of a pin so we can display the name and details
-    //also joined to map table
+
+    db.query(
+      `SELECT *
+      FROM pins
+      WHERE id = ${req.params.id}`
+    ).then(data => {
+      const pinData = data.rows[0];
+      res.json({pinData});
+    })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+
+
+      });
   });
 
   router.post('/:id', (req, res) => {
