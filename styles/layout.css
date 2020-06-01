@@ -40,32 +40,34 @@ body #mainframe #left nav {
   margin: 60px;
   margin-bottom: 10px;
   padding: 10px;
-  width: 300px;
+  width: 250px;
   background: rgba(0, 0, 0, 0.4);
   color: WHITE;
   border-radius: 25px;
 }
 
 body #mainframe #left nav button {
-  border: none;
-  height: 30px;
-  width: 30px;
-  background-image: url("https://mdbootstrap.com/img/svg/hamburger7.svg?color=FFFFFF");
   margin-left: 10px;
+  padding: 0px;
 }
 
 body #mainframe #left nav .logo {
   margin-right: 10px;
 }
 
-body #mainframe #left ul {
+body #mainframe #left .menu {
   position: relative;
   z-index: 100;
-  width: 300px;
+  width: 250px;
   margin-left: 60px;
   background: rgba(0, 0, 0, 0.4);
   color: WHITE;
   border-radius: 20px;
+  list-style: none;
+}
+
+body #mainframe #left .menu form {
+  padding: 2em;
 }
 
 body #mainframe #middle {

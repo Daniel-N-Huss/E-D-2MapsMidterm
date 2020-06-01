@@ -23,7 +23,7 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
-    z-index: 0
+    z-index: 0;
   }
 
   #mainframe {
@@ -42,17 +42,19 @@ body {
         margin: 60px;
         margin-bottom: 10px;
         padding: 10px;
-        width: 300px;
+        width: 250px;
         background:$transparantBackground;
         color: $primaryFontColor;
         border-radius: 25px;
 
         button {
-          border: none;
-          height: 30px;
-          width: 30px;
-          background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=FFFFFF');
+          // border: none;
+          // height: 30px;
+          // width: 30px;
+          // // background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=FFFFFF');
           margin-left: 10px;
+          padding: 0px;
+
         }
 
         .logo {
@@ -60,13 +62,17 @@ body {
         }
       }
 
-      ul {
+      .menu {
         @include inFrontMap();
-        width: 300px;
+        width: 250px;
         margin-left: 60px;
         background:$transparantBackground;
         color: $primaryFontColor;
         border-radius: 20px;
+        list-style: none;
+        form  {
+          padding: 2em;
+        }
       }
     }
 
