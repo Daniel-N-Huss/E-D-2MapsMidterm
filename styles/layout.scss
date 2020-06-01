@@ -64,7 +64,7 @@ body {
 
       .menu {
         @include inFrontMap();
-        width: 300px;
+        width: 250px;
         margin-left: 60px;
         background:$transparantBackground;
         color: $primaryFontColor;
