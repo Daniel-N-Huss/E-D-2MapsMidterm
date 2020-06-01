@@ -19,6 +19,6 @@ function initMap() {
   });
   var marker = new google.maps.Marker({position: LHL, map: map});
 
-  pinPainter(2);
+  pinPainter(3);
 };
 
