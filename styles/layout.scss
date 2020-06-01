@@ -23,7 +23,7 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
-    z-index: 0
+    z-index: 0;
   }
 
   #mainframe {
@@ -60,13 +60,17 @@ body {
         }
       }
 
-      ul {
+      .menu {
         @include inFrontMap();
         width: 300px;
         margin-left: 60px;
         background:$transparantBackground;
         color: $primaryFontColor;
         border-radius: 20px;
+        list-style: none;
+        form  {
+          padding: 2em;
+        }
       }
     }
 

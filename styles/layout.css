@@ -58,7 +58,7 @@ body #mainframe #left nav .logo {
   margin-right: 10px;
 }
 
-body #mainframe #left ul {
+body #mainframe #left .menu {
   position: relative;
   z-index: 100;
   width: 300px;
@@ -66,6 +66,11 @@ body #mainframe #left ul {
   background: rgba(0, 0, 0, 0.4);
   color: WHITE;
   border-radius: 20px;
+  list-style: none;
+}
+
+body #mainframe #left .menu form {
+  padding: 2em;
 }
 
 body #mainframe #middle {
