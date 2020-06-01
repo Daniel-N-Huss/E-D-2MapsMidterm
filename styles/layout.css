@@ -47,11 +47,8 @@ body #mainframe #left nav {
 }
 
 body #mainframe #left nav button {
-  border: none;
-  height: 30px;
-  width: 30px;
-  background-image: url("https://mdbootstrap.com/img/svg/hamburger7.svg?color=FFFFFF");
   margin-left: 10px;
+  padding: 0px;
 }
 
 body #mainframe #left nav .logo {

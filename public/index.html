@@ -12,6 +12,34 @@
     rel="stylesheet">
 
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <!-- animation style -->
+    <style>
+      .container {
+        display: inline-block;
+        cursor: pointer;
+      }
+
+      .bar1, .bar2, .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+
+      .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+      }
+
+      .change .bar2 {opacity: 0;}
+
+      .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+      }
+      </style>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
@@ -22,6 +50,13 @@
       <div id="left">
           <nav class="navbar navbar-dark bg-dark">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <!-- responsive button -->
+              <div class="container" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+              <!-- responsive button -->
             </button>
           </nav>
           <div class="collapse menu" id="navbarToggleExternalContent" >
@@ -92,4 +127,10 @@
   <!--Scripts can go here-->
 
   <script src="/scripts/maps.js" defer></script>
+  <!-- animation script -->
+  <script>
+    function myFunction(x) {
+      x.classList.toggle("change");
+    }
+  </script>
 </html>
