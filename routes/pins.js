@@ -20,8 +20,16 @@ module.exports = (db) => {
     GROUP BY pins.id
     HAVING map_id = ${mapId}
     `)
-      .then(pins => res.send(pins.rows))
-      .catch(err => {
+      .then(data => {
+        let pins = data.rows
+        pins.forEach(pin => {
+          pin.geo_location = JSON.parse(pin.geo_location);
+          console.log(typeof pin.geo_location);
+
+        });
+        res.send(pins);
+      })
+        .catch(err => {
         res
           .status(500)
           .json({ error: err.message });
