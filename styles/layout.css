@@ -33,15 +33,6 @@ body #mainframe #left {
 body #mainframe #left nav {
   position: relative;
   z-index: 100;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: 10vh 60px 10px 60px;
   padding: 10px;
   width: 250px;
@@ -82,8 +73,33 @@ body #mainframe #left nav button .change .bar3 {
           transform: rotate(45deg) translate(-3px, 1px);
 }
 
-body #mainframe #left nav .logo {
-  margin-right: 10px;
+body #mainframe #left nav #brand-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-right: 1em;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+body #mainframe #left nav #brand-container #brand-img {
+  margin-right: 3px;
+  margin-top: 1px;
+}
+
+body #mainframe #left nav #brand-container #name {
+  margin-bottom: 0px;
+  font-family: 'Bungee';
+  font-size: 175%;
+}
+
+body #mainframe #left nav #brand-container:hover {
+  border: 2px solid gray;
+  border-radius: 10px;
 }
 
 body #mainframe #left .menu {

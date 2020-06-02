@@ -38,9 +38,9 @@ body {
 
       nav {
         @include inFrontMap();
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
+        // display:flex;
+        // justify-content: space-between;
+        // align-items: center;
         margin: 10vh 60px 10px 60px;
         padding: 10px;
         width: 250px;
@@ -77,9 +77,34 @@ body {
 
         }
 
-        .logo {
-          margin-right: 10px;
+        // button {
+        //   border: 1px solid red($color: #000000);
+        // }
+        #brand-container {
+          display: flex;
+          flex-direction: row;
+          margin-right: 1em;
+          justify-content: space-around;
+
+
+          #brand-img {
+            margin-right: 3px ;
+            margin-top: 1px;
+
+          }
+          #name {
+            // margin-top: 3px;
+            margin-bottom: 0px;
+            font-family: 'Bungee';
+            font-size: 175%;
+
+          }
         }
+        #brand-container:hover {
+          border: 2px solid gray;
+          border-radius: 10px;
+        }
+
       }
 
       .menu {

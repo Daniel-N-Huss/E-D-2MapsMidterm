@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8">
     <!--Styles, fonts, go here-->
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -30,6 +30,13 @@
               </div>
               <!-- responsive button -->
             </button>
+            <!-- <a class="logo" rel="home" href="#" title="ED^2"> -->
+            <div id="brand-container" onclick="moveMapsBack(); closeNav()">
+              <img id="brand-img" width="30" height="30"  src="images/PinClipart.com_gps-clipart_987668.png">
+               <p id="name"> ED^2</p>
+            </div>
+
+            <!-- </a> -->
           </nav>
           <div class="collapse menu" id="navbarToggleExternalContent" >
 
@@ -46,7 +53,7 @@
               </form>
 
               <button type="submit" class="btn btn-primary create-button" onclick="openNav(); moveMaps()"> create</button>
-              <button type="submit" class="btn btn-primary create-button" onclick="moveMapsBack(); closeNav()"> home</button>
+              <!-- <button type="submit" class="btn btn-primary create-button" onclick="moveMapsBack(); closeNav()"> home</button> -->
 
           </div>
       </div>
