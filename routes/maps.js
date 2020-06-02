@@ -22,6 +22,9 @@ module.exports = (db) => {
 
 
   router.get("/:id", (req, res) => {
+    db.query(`SELECT * FROM maps WHERE id = ${req.params}`)
+      .then(map => { res.send(map.rows[0])})
+
     //This will send back a map, and all of it's associated data with pins joined on.
 
   });

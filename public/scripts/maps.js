@@ -32,12 +32,30 @@
 // parameter when you first load the API. For example:
 // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-function initAutocomplete() {
-  var map = new google.maps.Map(document.getElementById('map'), {
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (document.querySelectorAll('#map').length > 0)
+  {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src= "https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=initAutocomplete";
+    script.async = true;
+
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+});
+
+let map;
+let userMarkers = [];
+
+
+window.initAutocomplete = function() {
+  map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 49.2827, lng: -123.1207},
     zoom: 13,
     mapTypeId: 'roadmap'
   });
+
 
   // Create the search box and link it to the UI element.
   var input = document.getElementById('pac-input');
@@ -98,3 +116,31 @@ function initAutocomplete() {
     map.fitBounds(bounds);
   });
 }
+
+// const apiCall = function() {
+// if (document.querySelectorAll('#map').length > 0)
+  // {
+    // var script = document.createElement('script');
+    // script.type = 'text/javascript';
+    // script.src = 'https://maps.googleapis.com/maps/api/js?key=&callback=initMap';
+    // script.async = true;
+
+    // document.getElementsByTagName('head')[0].appendChild(script);
+  // }
+// }
+
+// var LHL = {lat: 49.281394, lng: -123.115016};
+
+
+
+
+// window.initMap = function() {
+
+
+  // map = new google.maps.Map(document.getElementById('map'), {
+    // var marker = new google.maps.Marker({position: LHL, map: map});
+    // userMarkers.push(marker);
+
+  // };
+
+  // document.addEventListener('DOMContentLoaded', apiCall());
