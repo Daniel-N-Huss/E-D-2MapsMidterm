@@ -7,6 +7,7 @@ html {
 body {
   height: 100%;
   width: 100%;
+  line-height: 1;
 }
 
 body #map {
@@ -36,9 +37,10 @@ body #mainframe #left nav {
   margin: 10vh 60px 10px 60px;
   padding: 10px;
   width: 250px;
+  border-radius: 25px;
   background: rgba(0, 0, 0, 0.4);
   color: WHITE;
-  border-radius: 25px;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 body #mainframe #left nav button {
@@ -84,6 +86,11 @@ body #mainframe #left nav #brand-container {
   margin-right: 1em;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  cursor: pointer;
+}
+
+body #mainframe #left nav #brand-container:hover {
+  border-radius: 10px;
 }
 
 body #mainframe #left nav #brand-container #brand-img {
@@ -91,16 +98,10 @@ body #mainframe #left nav #brand-container #brand-img {
   margin-top: 1px;
 }
 
-body #mainframe #left nav #brand-container s
-#name {
+body #mainframe #left nav #brand-container #name {
   margin-bottom: 0px;
   font-family: 'Bungee';
   font-size: 175%;
-}
-
-body #mainframe #left nav #brand-container:hover {
-  border: 2px solid gray;
-  border-radius: 10px;
 }
 
 body #mainframe #left .menu {
@@ -113,10 +114,11 @@ body #mainframe #left .menu {
   border-radius: 20px;
   list-style: none;
   text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 body #mainframe #left .menu form {
-  padding: 2em;
+  padding: 10px;
 }
 
 body #mainframe #left .menu form .container {
@@ -124,8 +126,13 @@ body #mainframe #left .menu form .container {
   cursor: pointer;
 }
 
-body #mainframe #left .menu .create-button {
+body #mainframe #left .menu form .form-control {
+  padding: 0;
+}
+
+body #mainframe #left .menu .btn-primary {
   margin: 0.5em auto 1em auto;
+  font-family: "Bebas Neue", cursive;
 }
 
 body #mainframe #middle {
@@ -144,6 +151,13 @@ body #mainframe #middle .maps-container {
   padding-right: 20px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body #mainframe #middle .maps-container h1 {
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+  color: black;
 }
 
 body #mainframe #middle .maps-container .popular-maps {
@@ -154,7 +168,7 @@ body #mainframe #middle .maps-container .popular-maps {
 }
 
 body #mainframe #middle .maps-container .popular-maps:hover {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 body #mainframe #middle .maps-container .popular-maps header {
@@ -166,19 +180,21 @@ body #mainframe #middle .maps-container .popular-maps header {
           justify-content: space-between;
   padding: 20px;
   padding-bottom: 0px;
+  font-size: 18px;
 }
 
 body #mainframe #middle .maps-container .popular-maps header .map-title {
   font-weight: bold;
+  letter-spacing: 2px;
+  font-family: "Bebas Neue", cursive;
+  font-size: 30px;
+  margin-bottom: 0;
 }
 
 body #mainframe #middle .maps-container .popular-maps .map-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -194,6 +210,7 @@ body #mainframe #middle .maps-container .popular-maps .map-body img {
 
 body #mainframe #middle .maps-container .popular-maps .map-body .map-description {
   margin: 10px;
+  font-size: 20px;
 }
 
 body #mainframe #middle .maps-container .popular-maps footer {
@@ -221,16 +238,28 @@ body #mainframe #right .sidenav {
   z-index: 100;
   margin-top: 10vh;
   right: 2%;
-  background-color: rgba(0, 0, 0, 0.4);
   overflow-x: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   padding-top: 60px;
-  border-radius: 25px;
   overflow: scroll;
 }
 
-body #mainframe #right .sidenav #pac-input {
+body #mainframe #right .sidenav h1 {
+  font-family: "Bebas Neue", cursive;
+  text-align: center;
+}
+
+body #mainframe #right .sidenav .create-Map {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+}
+
+body #mainframe #right .sidenav .create-Map #closebtn {
+  text-align: right;
+}
+
+body #mainframe #right .sidenav .create-Map #pac-input {
   background-color: #fff;
   font-weight: 300;
   margin-left: 12px;
@@ -239,25 +268,18 @@ body #mainframe #right .sidenav #pac-input {
   width: auto;
 }
 
-body #mainframe #right .sidenav a {
+body #mainframe #right .sidenav .create-Map a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color: #818181;
+  color: WHITE;
   display: block;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-body #mainframe #right .sidenav a:hover {
-  color: #f1f1f1;
-}
-
-body #mainframe #right .sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+body #mainframe #right .sidenav .create-Map a:hover {
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
 }
 /*# sourceMappingURL=layout.css.map */

@@ -42,7 +42,7 @@ module.exports = (db) => {
 
   router.get("/login/:id", (req, res) => {
     req.session.id = req.params.id;
-    res.redirect('/');
+    // res.redirect('/');
   })
 
   router.get("/logout/:id", (req, res) => {
