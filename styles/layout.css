@@ -91,7 +91,8 @@ body #mainframe #left nav #brand-container #brand-img {
   margin-top: 1px;
 }
 
-body #mainframe #left nav #brand-container #name {
+body #mainframe #left nav #brand-container s
+#name {
   margin-bottom: 0px;
   font-family: 'Bungee';
   font-size: 175%;
