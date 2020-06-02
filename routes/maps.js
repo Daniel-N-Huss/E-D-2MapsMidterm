@@ -12,10 +12,14 @@ module.exports = (db) => {
 
   router.get("/", (req, res) => {
     db.query(
-      `SELECT * FROM maps`
+      `SELECT *
+      FROM maps
+      JOIN users ON users.id = owner_id
+      GROUP BY users.id, maps.id`
     )
       .then(maps => res.send(maps.rows));
   });
+
 
   router.get("/:id", (req, res) => {
     //This will send back a map, and all of it's associated data with pins joined on.
