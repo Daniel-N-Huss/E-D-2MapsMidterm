@@ -1,5 +1,3 @@
-//ajax query
-
 const renderMaps = function(maps) {
   // loops through maps
   for (let i = 0; i < maps.length; i++) {
@@ -10,7 +8,6 @@ const renderMaps = function(maps) {
   }
 };
 
-
 //Function to create the Element that hosts the map, and to apply
 const createMapElement = function(map) {
   let $map =
@@ -18,7 +15,7 @@ const createMapElement = function(map) {
   `<section class="popular-maps">
     <header>
       <p class="map-title">${map.title}</p>
-      <p class="owner-id">${map.owner_id}</p>
+      <p class="owner-id">${map.username}</p>
     </header>
     <div class="map-body">
       <img src="${map.thumbnail_url}" alt="Map Icon"><p class="map-description"> ${map.description}
