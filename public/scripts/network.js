@@ -50,5 +50,3 @@ const getFavouriteMapsByUserId = function(userId) {
     data: { userId }
   });
 };
-
-getFavouriteMapsByUserId(1).then(x => console.log(x));
