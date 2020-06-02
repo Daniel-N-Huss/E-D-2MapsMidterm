@@ -4,6 +4,11 @@ html {
   padding: 0;
 }
 
+body {
+  height: 100%;
+  width: 100%;
+}
+
 body #map {
   height: 100%;
   width: 100%;
@@ -37,8 +42,7 @@ body #mainframe #left nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 60px;
-  margin-bottom: 10px;
+  margin: 10vh 60px 10px 60px;
   padding: 10px;
   width: 250px;
   background: rgba(0, 0, 0, 0.4);
@@ -49,6 +53,33 @@ body #mainframe #left nav {
 body #mainframe #left nav button {
   margin-left: 10px;
   padding: 0px;
+}
+
+body #mainframe #left nav button .bar1, body #mainframe #left nav button .bar2, body #mainframe #left nav button .bar3 {
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  margin: 6px 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+body #mainframe #left nav button .change .bar1 {
+  /* -webkit-transform: rotate(-45deg) ; */
+  -webkit-transform: rotate(-45deg) translate(-3px, -1px);
+          transform: rotate(-45deg) translate(-3px, -1px);
+}
+
+body #mainframe #left nav button .change .bar2 {
+  width: 25px;
+  -webkit-transform: translate(2px, 0px);
+          transform: translate(2px, 0px);
+}
+
+body #mainframe #left nav button .change .bar3 {
+  /* -webkit-transform: rotate(45deg) translate(-8px, -8px); */
+  -webkit-transform: rotate(45deg) translate(-3px, 1px);
+          transform: rotate(45deg) translate(-3px, 1px);
 }
 
 body #mainframe #left nav .logo {
@@ -64,10 +95,20 @@ body #mainframe #left .menu {
   color: WHITE;
   border-radius: 20px;
   list-style: none;
+  text-align: center;
 }
 
 body #mainframe #left .menu form {
   padding: 2em;
+}
+
+body #mainframe #left .menu form .container {
+  display: inline-block;
+  cursor: pointer;
+}
+
+body #mainframe #left .menu .create-button {
+  margin: 0.5em auto 1em auto;
 }
 
 body #mainframe #middle {
@@ -152,5 +193,43 @@ body #mainframe #right {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+}
+
+body #mainframe #right .sidenav {
+  height: 70%;
+  width: 0;
+  position: fixed;
+  z-index: 100;
+  margin-top: 10vh;
+  right: 2%;
+  background-color: rgba(0, 0, 0, 0.4);
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  padding-top: 60px;
+  border-radius: 25px;
+  overflow: scroll;
+}
+
+body #mainframe #right .sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body #mainframe #right .sidenav a:hover {
+  color: #f1f1f1;
+}
+
+body #mainframe #right .sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 /*# sourceMappingURL=layout.css.map */

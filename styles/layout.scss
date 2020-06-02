@@ -18,7 +18,8 @@ html {
 };
 
 body {
-
+  height: 100%;
+  width: 100%;
   #map {
     height: 100%;
     width: 100%;
@@ -31,6 +32,7 @@ body {
     height: 100%;
     width: 100%;
 
+
     #left {
       flex-grow: 1;
 
@@ -39,8 +41,7 @@ body {
         display:flex;
         justify-content: space-between;
         align-items: center;
-        margin: 60px;
-        margin-bottom: 10px;
+        margin: 10vh 60px 10px 60px;
         padding: 10px;
         width: 250px;
         background:$transparantBackground;
@@ -48,12 +49,31 @@ body {
         border-radius: 25px;
 
         button {
-          // border: none;
-          // height: 30px;
-          // width: 30px;
-          // // background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=FFFFFF');
           margin-left: 10px;
           padding: 0px;
+
+          .bar1, .bar2, .bar3 {
+            width: 20px;
+            height: 2px;
+            background-color: white;
+            margin: 6px 0;
+            transition: 0.4s;
+          }
+
+          .change .bar1 {
+            /* -webkit-transform: rotate(-45deg) ; */
+            transform: rotate(-45deg) translate(-3px, -1px) ;
+          }
+
+          .change .bar2 {
+            width: 25px;
+            transform: translate(2px, 0px);
+          }
+
+          .change .bar3 {
+            /* -webkit-transform: rotate(45deg) translate(-8px, -8px); */
+            transform: rotate(45deg) translate(-3px, 1px);
+          }
 
         }
 
@@ -70,8 +90,17 @@ body {
         color: $primaryFontColor;
         border-radius: 20px;
         list-style: none;
+        text-align: center;
         form  {
           padding: 2em;
+          .container {
+            display: inline-block;
+            cursor: pointer;
+          }
+
+        }
+        .create-button {
+          margin: 0.5em auto 1em auto;
         }
       }
     }
@@ -137,6 +166,41 @@ body {
 
     #right {
       flex-grow: 1;
+      .sidenav {
+        height: 70%;
+        width: 0;
+        position: fixed;
+        z-index: 100;
+        margin-top: 10vh;
+        right: 2%;
+        background-color: $transparantBackground;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        border-radius: 25px;
+        overflow: scroll;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
     }
 
   }
