@@ -66,6 +66,7 @@
       <div id="right">
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <input id="pac-input" class="controls" type="text" placeholder="Search Box">
           <a href="#">location 1</a>
           <a href="#">location 2</a>
           <a href="#">location 3</a>
@@ -76,9 +77,11 @@
   <!--Scripts can go here-->
   <script src="/scripts/popMaps.js"></script>
   <script src="/scripts/client.js"></script>
+  <script src="/scripts/mapSearch.js"></script>
   <script src="/scripts/network.js" type="text/javascript"></script>
   <script src="/scripts/pinPainter.js" type="text/javascript"></script>
   <script src="/scripts/maps.js" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=initAutocomplete" async defer></script>
   <!-- animation script -->
   <script>
     function myFunction(x) {
