@@ -35,7 +35,7 @@ body {
 
 
     #left {
-      flex-grow: 1;
+      flex-grow: 1.5;
 
       nav {
         @include inFrontMap();
@@ -209,29 +209,51 @@ body {
     #right {
       flex-grow: 1;
       .sidenav {
-        height: 70%;
+        height: 700px;
         width: 0;
         position: fixed;
         z-index: 100;
-        margin-top: 10vh;
+        margin-top: 100px;
         right: 2%;
-        // background-color: $transparantBackground;
         overflow-x: hidden;
         transition: 0.5s;
-        padding-top: 60px;
         overflow: scroll;
 
         h1 {
           font-family: $accentFontStyle;
           text-align: center;
+          color:black
+
         }
 
         .create-Map {
           background-color: $transparantBackground;
           border-radius: 25px;
+          height: 650px;
+          width: 300px;
+          &:hover {
+            background-color:  rgba(0, 0, 0, 0.6);
+          }
 
           #closebtn {
             text-align: right;
+          }
+
+          .user-map-input {
+            label {
+              color: $primaryFontColor;
+              word-wrap: normal;
+              font-family: $accentFontStyle;
+              font-size: 20px;
+            }
+            .start-button {
+              font-family: $accentFontStyle;
+            }
+
+            .form-control {
+              width: 200px;
+              margin: 1px auto 5em auto
+            }
           }
 
           #pac-input {
