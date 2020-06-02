@@ -7,6 +7,12 @@
 
 const express = require('express');
 const router  = express.Router();
+const cookieSession = require('cookie-session');
+
+router.use(cookieSession({
+  name: 'Shh-secret',
+  keys: ['Secret', 'rotation'],
+}));
 
 /* __________________
     These will all serve responses to ajax requests from the client side
@@ -34,6 +40,15 @@ module.exports = (db) => {
     const user_id = req.params;
   });
 
+  router.get("/login/:id", (req, res) => {
+    req.session.id = req.params.id;
+    res.redirect('/');
+  })
+
+  router.get("/logout/:id", (req, res) => {
+    req.session = null;
+    res.redirect('/');
+  })
 
   /*   Routes for possible stretch goals below       */
 
