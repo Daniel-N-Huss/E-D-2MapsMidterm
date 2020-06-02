@@ -104,17 +104,17 @@ window.initAutocomplete = function() {
   });
 }
 
-const apiCall = function() {
-if (document.querySelectorAll('#map').length > 0)
-  {
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=&callback=initMap';
-    script.async = true;
+// const apiCall = function() {
+// if (document.querySelectorAll('#map').length > 0)
+  // {
+    // var script = document.createElement('script');
+    // script.type = 'text/javascript';
+    // script.src = 'https://maps.googleapis.com/maps/api/js?key=&callback=initMap';
+    // script.async = true;
 
-    document.getElementsByTagName('head')[0].appendChild(script);
-  }
-}
+    // document.getElementsByTagName('head')[0].appendChild(script);
+  // }
+// }
 
 // var LHL = {lat: 49.281394, lng: -123.115016};
 
