@@ -4,19 +4,29 @@ const mapCardListener = function() {
 
     console.log(mapId);
 
-    getMaps(mapId)
-      .then(pins => {
 
-        console.log(pins);
+    console.log(window.google.maps);
 
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 49.2827, lng: -123.1207},
-          zoom: 10
-        })
+    // google.maps.getMap();
+    console.log("mapCardListener -> google.maps.getMap();", window.google.maps.getMap());
 
-        pinPainter(mapData.map);
-      })
+
+
+    // getMapPins(mapId)
+      // .then(pins => {
+
+        // console.log(pins);
+
+        // window.google.maps.marker.forEach(marker => {
+        // marker.setMap(null)
+        // });
+
+
+
+        // pinPainter(maps.id);
+      // })
 
     console.log($(this.dataset[0]));
-  });
+  //});
+})
 }
