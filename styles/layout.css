@@ -125,6 +125,8 @@ body #mainframe #middle .maps-container {
   overflow: scroll;
   height: 700px;
   padding-right: 20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 body #mainframe #middle .maps-container .popular-maps {

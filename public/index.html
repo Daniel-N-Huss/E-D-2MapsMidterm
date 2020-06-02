@@ -45,12 +45,13 @@
 
               </form>
 
-              <button type="submit" class="btn btn-primary create-button" onclick="openNav()"> create</button>
+              <button type="submit" class="btn btn-primary create-button" onclick="openNav(); moveMaps()"> create</button>
+              <button type="submit" class="btn btn-primary create-button" onclick="moveMapsBack(); closeNav()"> home</button>
 
           </div>
       </div>
       <div id="middle">
-        <main class="maps-container">
+        <main class="maps-container" id="maps-container">
           <div><h1>Header??</h1></div>
 
       </main>
@@ -78,6 +79,12 @@
     }
     function openNav() {
       document.getElementById("mySidenav").style.width = "250px";
+    }
+    function moveMaps() {
+      document.getElementById("maps-container").style.height = "0"
+    }
+    function moveMapsBack() {
+      document.getElementById("maps-container").style.height = "700px"
     }
 
     function closeNav() {
