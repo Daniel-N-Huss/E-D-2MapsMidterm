@@ -15,7 +15,7 @@ const renderMaps = function(maps) {
 const createMapElement = function(map) {
   let $map =
   // creates map HTML with input from client
-  `<section class="popular-maps">
+  `<section class="popular-maps" data-map-id="${map.id}">
     <header>
       <p class="map-title">${map.title}</p>
       <p class="owner-id">${map.owner_id}</p>
@@ -35,8 +35,8 @@ const createMapElement = function(map) {
 
 const loadMaps = () => $.get('/api/maps', JSON)
 .done(function (response) {
-  console.log(response)
   // $('.maps-container').empty();
   renderMaps(response);
-})
+  mapCardListener();
+});
 
