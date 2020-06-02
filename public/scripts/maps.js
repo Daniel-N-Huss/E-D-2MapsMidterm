@@ -10,17 +10,21 @@ if (document.querySelectorAll('#map').length > 0)
   }
 }
 
+var LHL = {lat: 49.281394, lng: -123.115016};
+
 var map;
-var marker;
+let userMarkers = [];
+
+
 window.initMap = function() {
 
-  var LHL = {lat: 49.281394, lng: -123.115016};
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 49.2827, lng: -123.1207},
     zoom: 13
   });
   var marker = new google.maps.Marker({position: LHL, map: map});
+  userMarkers.push(marker);
 
 };
 
