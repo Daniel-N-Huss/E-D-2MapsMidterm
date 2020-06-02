@@ -1,6 +1,6 @@
 const pinPainter = function(map_id) {
 
-  getMapPins(map_id)
+ getMapPins(map_id)
     .then(pins => {
 
       pins.forEach(pin => {

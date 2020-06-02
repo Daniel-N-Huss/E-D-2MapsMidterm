@@ -12,17 +12,16 @@ if (document.querySelectorAll('#map').length > 0)
 
 var map;
 var marker;
-function initMap(map_id) {
+window.initMap = function() {
+
   var LHL = {lat: 49.281394, lng: -123.115016};
+
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 49.2827, lng: -123.1207},
     zoom: 13
   });
-  var marker = new google.maps.Marker({position: LHL, map: map, name: 'A marker for testing'});
+  var marker = new google.maps.Marker({position: LHL, map: map});
 
-  if (map_id) {
-    pinPainter(map_id);
-  }
 };
 
 document.addEventListener('DOMContentLoaded', apiCall());
