@@ -135,6 +135,21 @@ body #mainframe #left .menu .btn-primary {
   font-family: "Bebas Neue", cursive;
 }
 
+body #mainframe #left .menu a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: WHITE;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body #mainframe #left .menu a:hover {
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
+}
+
 body #mainframe #middle {
   -webkit-box-flex: 4;
       -ms-flex-positive: 4;
@@ -303,5 +318,34 @@ body #mainframe #right .sidenav .create-Map a {
 body #mainframe #right .sidenav .create-Map a:hover {
   -webkit-transform: skewX(-15deg);
           transform: skewX(-15deg);
+}
+
+body #mainframe #right .sidenav #pins-display {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  height: 650px;
+  width: 300px;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px;
+}
+
+body #mainframe #right .sidenav #pins-display .pin-body img {
+  height: 100px;
+  width: 100px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+body #mainframe #right .sidenav #pins-display:hover {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 /*# sourceMappingURL=layout.css.map */

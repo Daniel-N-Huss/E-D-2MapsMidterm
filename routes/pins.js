@@ -39,14 +39,21 @@ module.exports = (db) => {
     //Joined onto the map called
   });
 
-  router.get('/:id', (req, res) => {
+  router.get('/', (req, res) => {
 
+    const { mapId } = req.query;
     db.query(
       `SELECT *
       FROM pins
-      WHERE id = ${req.params.id}`
+      JOIN maps ON maps.id = map_id
+      WHERE map_id = ${mapId}
+      `
     ).then(data => {
-      const pinData = data.rows[0];
+
+
+      const pinData = data.rows;
+      console.log("pinData", pinData)
+
       res.send(pinData);
     })
       .catch(err => {

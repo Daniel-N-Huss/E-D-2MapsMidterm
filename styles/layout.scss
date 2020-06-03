@@ -291,6 +291,33 @@ body {
             }
           }
         }
+
+        #pins-display {
+          display: flex;
+          justify-content: start;
+          background-color: $transparantBackground;
+          border-radius: 25px;
+          height: 650px;
+          width: 300px;
+          display: flex;
+          align-items: center;
+          margin: 5px;
+
+          .pin-body {
+            img {
+              height:100px;
+              width:100px;
+              margin-left: 10px;
+              margin-bottom: 10px;
+            }
+          }
+
+          &:hover {
+            background-color:  rgba(0, 0, 0, 0.6);
+          }
+
+
+        }
       }
     }
   }

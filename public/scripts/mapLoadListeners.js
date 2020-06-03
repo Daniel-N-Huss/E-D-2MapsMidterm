@@ -12,6 +12,9 @@ const mapCardListener = function() {
     }
     refreshMap();
 
-    openPinInfo();
+    openPinsDisplay();
+
+    pinDisplay(mapId);
+
   });
 }
