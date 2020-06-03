@@ -321,31 +321,33 @@ body #mainframe #right .sidenav .create-Map a:hover {
 }
 
 body #mainframe #right .sidenav #pins-display {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: start;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 25px;
-  height: 650px;
+  position: relative;
+  z-index: 100;
+  margin-top: 100px;
+  height: 700px;
   width: 300px;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin: 5px;
+  overflow: scroll;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-family: "Bebas Neue", cursive;
 }
 
-body #mainframe #right .sidenav #pins-display .pin-body img {
+body #mainframe #right .sidenav .pin-info {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  color: WHITE;
+  margin-bottom: 20px;
+}
+
+body #mainframe #right .sidenav .pin-info:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+body #mainframe #right .sidenav .pin-info .pin-body img {
   height: 100px;
   width: 100px;
   margin-left: 10px;
   margin-bottom: 10px;
-}
-
-body #mainframe #right .sidenav #pins-display:hover {
-  background-color: rgba(0, 0, 0, 0.6);
 }
 /*# sourceMappingURL=layout.css.map */

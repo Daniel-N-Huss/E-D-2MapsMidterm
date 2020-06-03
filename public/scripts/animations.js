@@ -15,7 +15,7 @@ function closeNav() {
 }
 
 function openPinsDisplay() {
-  document.getElementById("pins-display").style.width = "300px";
+  document.getElementById("pins-display").style.width = "400px";
 }
 
 function closePinsDisplay() {
