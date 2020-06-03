@@ -1,4 +1,5 @@
 const createPinElement = function(pin) {
+  console.log(pin)
   let $pin =
   // creates map HTML with input from client
   `<section class="pin-info" data-pin-id="${pin.id}">
@@ -17,7 +18,6 @@ const renderPins = function(pins) {
 
   for (let i = 0; i < pins.length; i++) {
     const currentPin = createPinElement(pins[i]);
-    console.log(currentPin);
     $('#pins-display').append(currentPin);
   }
 };
@@ -31,6 +31,7 @@ const pinDisplay = function(mapId) {
     .then(pins => {
       console.log(pins)
       renderPins(pins)
+
     })
 }
 
