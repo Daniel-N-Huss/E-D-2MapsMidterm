@@ -11,5 +11,7 @@ const mapCardListener = function() {
       pinPainter(mapId);
     }
     refreshMap();
+
+    openPinInfo();
   });
 }

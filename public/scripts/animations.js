@@ -13,3 +13,12 @@ function moveMapsBack() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
+
+function openPinInfo() {
+  document.getElementById("pins-display").style.width = "250px";
+}
+
+function closePinInfo() {
+  document.getElementById("pins-display").style.width = "0";
+}
+
