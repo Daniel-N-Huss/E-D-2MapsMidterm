@@ -65,26 +65,59 @@
           <h1>Create Map</h1>
           <div class="create-Map">
             <a href="javascript:void(0)" id="closebtn" onclick="closeNav()">&times;</a>
-            <input id="pac-input" class="controls" type="text" placeholder="Enter Location Name">
+            <form class="user-map-input text-center">
+              <label for="pin-title">Come up with a cool name <br> for your map:</label>
+              <input class="form-control" type="text" name="pin-title">
+              <label for="pin-description">What's your map all about?</label>
+              <input class="form-control" type="text" name="pin-description">
+              <label for="pin-url">What photo best represents <br> your map?</label>
+              <input class="form-control" type="text" name="pin-url" placeholder="url">
+              <button type="button" class="btn btn-primary start-button" onclick="closeNav(), openNav2()">get started!</button>
+            </form>
+            <!-- <div class="map-pins">
+            <a href="#">location 1</a> -->
+          </div>
+        </div>
+        <div id="mySidenav2" class="sidenav">
+          <h1>Your Map</h1>
+          <div class="create-Map">
+            <a href="javascript:void(0)" id="closebtn" onclick="closeNav2()">&times;</a>
+            <input id="pac-input" class="controls" type="text" placeholder="Search">
+            <form class="user-map-input text-center">
+              <label for="pin-title">Come up with a cool name <br> for your map:</label>
+              <input class="form-control" type="text" name="pin-title">
+              <label for="pin-description">What's your map all about?</label>
+              <input class="form-control" type="text" name="pin-description">
+              <label for="pin-url">What photo best represents <br> your map?</label>
+              <input class="form-control" type="text" name="pin-url" placeholder="url">
+            </form>
+            <div class="map-pins">
             <a href="#">location 1</a>
-            <a href="#">location 2</a>
-            <a href="#">location 3</a>
-            <a href="#">location 4</a>
+          </div>
+          <div id="pins-display" class="sidenav">
+            <header>
+              <h1> Pins from ___ Map </h1>
+              <a href="javascript:void(0)" id="closebtn" onclick="closePinInfo()">&times;</a>
+            </header>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
   <!-- Internal Scripts -->
+
+  <script src="/scripts/maps.js" defer></script>
+  <script src="/scripts/pinPainter.js" type="text/javascript"></script>
+  <script src="/scripts/mapLoadListeners.js"></script>
   <script src="/scripts/popMaps.js"></script>
   <script src="/scripts/login.js"></script>
   <script src="/scripts/client.js"></script>
   <script src="/scripts/network.js" type="text/javascript"></script>
-  <script src="/scripts/pinPainter.js" type="text/javascript"></script>
-  <script src="/scripts/maps.js" defer></script>
   <script src="/scripts/animations.js"></script>
+  <script src="/scripts/client.js"></script>
 
   <!-- External Scripts -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=initAutocomplete" async defer></script>
+
 
 </html>

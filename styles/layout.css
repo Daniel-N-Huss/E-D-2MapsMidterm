@@ -26,9 +26,9 @@ body #mainframe {
 }
 
 body #mainframe #left {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -webkit-box-flex: 1.5;
+      -ms-flex-positive: 1.5;
+          flex-grow: 1.5;
 }
 
 body #mainframe #left nav {
@@ -232,31 +232,53 @@ body #mainframe #right {
 }
 
 body #mainframe #right .sidenav {
-  height: 70%;
+  height: 700px;
   width: 0;
   position: fixed;
   z-index: 100;
-  margin-top: 10vh;
+  margin-top: 100px;
   right: 2%;
   overflow-x: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  padding-top: 60px;
   overflow: scroll;
 }
 
 body #mainframe #right .sidenav h1 {
   font-family: "Bebas Neue", cursive;
   text-align: center;
+  color: black;
 }
 
 body #mainframe #right .sidenav .create-Map {
   background-color: rgba(0, 0, 0, 0.4);
   border-radius: 25px;
+  height: 650px;
+  width: 300px;
+}
+
+body #mainframe #right .sidenav .create-Map:hover {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 body #mainframe #right .sidenav .create-Map #closebtn {
   text-align: right;
+}
+
+body #mainframe #right .sidenav .create-Map .user-map-input label {
+  color: WHITE;
+  word-wrap: normal;
+  font-family: "Bebas Neue", cursive;
+  font-size: 20px;
+}
+
+body #mainframe #right .sidenav .create-Map .user-map-input .start-button {
+  font-family: "Bebas Neue", cursive;
+}
+
+body #mainframe #right .sidenav .create-Map .user-map-input .form-control {
+  width: 200px;
+  margin: 1px auto 5em auto;
 }
 
 body #mainframe #right .sidenav .create-Map #pac-input {
