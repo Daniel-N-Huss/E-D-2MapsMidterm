@@ -132,6 +132,18 @@ body {
           margin: 0.5em auto 1em auto;
           font-family: $accentFontStyle;
         }
+        a {
+          padding: 8px;
+          text-decoration: none;
+          font-size: 25px;
+          color: $primaryFontColor;
+          display: block;
+          transition: 0.3s;
+          &:hover {
+            transform: skewX(-15deg);
+          }
+        }
+
       }
     }
 

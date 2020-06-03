@@ -36,18 +36,30 @@ module.exports = (db) => {
 
   router.get("/:id", (req, res) => {
     //This will return a user and a list of their maps I think
-    res.send('Hi, nothing created here yet bit your route is good!');
-    const user_id = req.params;
+    const user_id = req.params.id;
+    db.query(
+      `SELECT *
+      FROM maps
+      JOIN users
+      ON users.id = owner_id
+      WHERE owner_id = ${user_id}
+      GROUP BY users.id, maps.id`
+    )
+      .then(user => res.send(user.rows));
   });
 
   router.get("/login/:id", (req, res) => {
     req.session.id = req.params.id;
-    // res.redirect('/');
+
+    res.status(200).send(req.session.id);
+
   })
 
   router.get("/logout/:id", (req, res) => {
+    console.log("goodbye");
+
     req.session = null;
-    res.redirect('/');
+    res.status(200).send("ok");
   })
 
   /*   Routes for possible stretch goals below       */
