@@ -60,6 +60,8 @@ const loginListener = function() {
         myMapsListener(response);
         favouritesListener(response);
         logoutListener(response);
+        $('.maps-container').empty();
+        loadMaps();
 
 
       })
