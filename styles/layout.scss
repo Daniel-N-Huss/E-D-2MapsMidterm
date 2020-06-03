@@ -268,16 +268,84 @@ body {
             }
           }
 
-          #pac-input {
+          a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: $primaryFontColor;
+            display: block;
+            transition: 0.3s;
+            &:hover {
+              transform: skewX(-15deg);
+            }
+          }
+        }
+      }
+      .sidenav2 {
+        height: 700px;
+        width: 0;
+        position: fixed;
+        z-index: 100;
+        margin-top: 100px;
+        right: 2%;
+        overflow-x: hidden;
+        transition: 0.5s;
+        overflow: scroll;
+
+        h1 {
+          font-family: $accentFontStyle;
+          text-align: center;
+          color:black
+
+        }
+
+        .create-Map2 {
+          background-color: $transparantBackground;
+          border-radius: 25px;
+          height: 650px;
+          width: 300px;
+          &:hover {
+            background-color:  rgba(0, 0, 0, 0.6);
+          }
+
+          #closebtn2 {
+            text-align: right;
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: $primaryFontColor;
+            display: block;
+            transition: 0.3s;
+            &:hover {
+              transform: skewX(-15deg);
+            }
+          }
+          .user-map-input2 {
+            label {
+              color: $primaryFontColor;
+              word-wrap: normal;
+              font-family: $accentFontStyle;
+              font-size: 20px;
+            }
+            #pin-submit {
+              font-family: $accentFontStyle;
+              width: 100px;
+            }
+
+            .form-control2 {
+              width: 200px;
+              margin: 1px auto 3em auto
+            }
+          }
+            #pac-input {
             background-color: #fff;
-            // font-family: Roboto;
-            // font-size: 15px;
             font-weight: 300;
-            margin-left: 12px;
             padding: 0 11px 0 13px;
             text-overflow: ellipsis;
-            width: auto;
+            width: 200px;
+            margin: 1px auto 3em auto
           }
+
 
           a {
             padding: 8px 8px 8px 32px;
@@ -291,6 +359,7 @@ body {
             }
           }
         }
+
       }
     }
   }

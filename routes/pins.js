@@ -63,7 +63,14 @@ module.exports = (db) => {
   });
 
   router.post('/', (req, res) => {
-    //request coming in to save a new pin, should contain all the data of the pin when it's created
+    console.log(req)
+    db.query (
+      `INSERT
+      INTO pins (title, description, thumbnail_url)
+      VALUES ('${req.body.title}', '${req.body.description}', '${req.body.url}')
+      RETURNING *`
+      )
+    .then(pin => res.send(pin.rows))
   });
 
   router.post('/', (req, res) => {
