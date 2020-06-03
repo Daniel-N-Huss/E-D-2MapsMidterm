@@ -57,6 +57,18 @@ module.exports = (db) => {
     //This will send back all maps that belong to the user id
 
   });
+  router.get("/favourites/:id", (req, res) => {
+    db.query(`SELECT *
+    FROM favourites
+    JOIN maps ON maps.id = map_id
+    JOIN users ON owner_id = users.id
+    WHERE user_id = ${req.params.id}
+    `)
+      .then(map => { res.send(map.rows)})
+
+    //This will send back all maps that belong to the user id
+
+  });
 
   router.post("/:id", (req, res) => {
     //This will be a path for editing the data for the map in the database,
