@@ -33,3 +33,8 @@ const pinDisplay = function(mapId) {
       renderPins(pins)
     })
 }
+
+
+const clearPinDisplay = function() {
+  $('#pins-display').empty();
+};

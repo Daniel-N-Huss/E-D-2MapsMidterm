@@ -10,6 +10,8 @@ const mapCardListener = function() {
       userMarkers = []
       pinPainter(mapId);
     }
+    clearPinDisplay();
+
     refreshMap();
 
     moveMaps();
