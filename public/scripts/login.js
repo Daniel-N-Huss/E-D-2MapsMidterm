@@ -1,4 +1,5 @@
-$(document).ready(function() {
+const menu = function () {
+  $(document).ready(function() {
   $(".login").submit(function(event) {
     event.preventDefault();
     $.get('/api/users/login/2')
@@ -13,14 +14,14 @@ $(document).ready(function() {
           <a href="#">Favorites</a>
           <a href="#">My Maps</a>
           <a onclick="openNav(); moveMaps()" href="#">New Map</a>
-          <a href="#" class="logout" >Logout</a>
+          <a href="#" class="logout" onclick="closeNav(); moveMapsBack()">Logout</a>
 
                 `
-        )
+        )// add clearing function in logout
         $(".logout").click(function(event) {
 
           event.preventDefault();
-          console.log("hello");
+          // console.log("hello");
 
           $.get(`/api/users/logout/${response[0].id}`)
           .done(function (response) {
@@ -38,6 +39,7 @@ $(document).ready(function() {
 
                     `
             )
+            menu();
           })
         });
       })
@@ -47,3 +49,5 @@ $(document).ready(function() {
 
 
 });
+}
+menu();
