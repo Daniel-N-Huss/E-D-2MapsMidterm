@@ -21,6 +21,14 @@ router.use(cookieSession({
 
 
 module.exports = (db) => {
+
+  router.get("/isloggedin", (req, res) => {
+    console.log("checking");
+    // console.log(req.session.id);
+    // console.log(req.session.id? true:false);
+    res.status(200).send(req.session.id? true:false);
+  })
+
   router.get("/", (req, res) => {
     db.query(`SELECT * FROM users;`)
       .then(data => {
@@ -61,6 +69,7 @@ module.exports = (db) => {
     req.session = null;
     res.status(200).send("ok");
   })
+
 
   /*   Routes for possible stretch goals below       */
 

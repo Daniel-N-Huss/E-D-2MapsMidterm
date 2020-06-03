@@ -60,6 +60,8 @@ const loginListener = function() {
         myMapsListener(response);
         favouritesListener(response);
         logoutListener(response);
+        $('.maps-container').empty();
+        loadMaps();
 
 
       })
@@ -81,3 +83,10 @@ const favouritesListener = function(response){
     loadFavourites(response[0].id);
   })
 }
+const brandListener = function() {
+  $("#brand-container").click(function(event) {
+    $('.maps-container').empty();
+    loadMaps();
+  })
+}
+brandListener();
