@@ -31,9 +31,10 @@ const getMapPins = function(mapId) {
 };
 
 
-const getPinDetails = function(pinId) {
+const getPinDetails = function(mapId) {
   return $.ajax({
-    url: `/api/pins/${pinId}`
+    url: `/api/pins/`,
+    data: { mapId }
   });
 };
 
