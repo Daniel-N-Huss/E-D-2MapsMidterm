@@ -33,6 +33,8 @@ const logoutListener = function(response) {
               `
       )
       menu();
+      $('.maps-container').empty();
+      loadMaps();
     })
   });
 }
@@ -48,15 +50,17 @@ const loginListener = function() {
         $('.menu').append(
           `
           <a href="#">Logged in as: ${response[0].username}</a>
-          <a href="#" class="favourites">Favourites</a>
-          <a href="#" class="myMaps">My Maps</a>
+          <a href="#" class="favourites" onclick="closeNav(); moveMapsBack()" >Favourites</a>
+          <a href="#" class="myMaps" onclick="closeNav(); moveMapsBack()">My Maps</a>
           <a onclick="openNav(); moveMaps()" href="#">New Map</a>
           <a href="#" class="logout" onclick="closeNav(); moveMapsBack()">Logout</a>
 
                 `
         )// add clearing function in logout
         myMapsListener(response);
+        favouritesListener(response);
         logoutListener(response);
+
 
       })
 
@@ -68,5 +72,12 @@ const myMapsListener = function(response){
     console.log("myMaps");
 
     loadMyMaps(response[0].id);
+  })
+}
+const favouritesListener = function(response){
+  $(".favourites").click(function(event) {
+    console.log("favourites");
+
+    loadFavourites(response[0].id);
   })
 }
