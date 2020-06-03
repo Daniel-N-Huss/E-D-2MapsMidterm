@@ -1,5 +1,11 @@
 const express = require('express');
 const router = express.Router();
+const cookieSession = require('cookie-session');
+
+router.use(cookieSession({
+  name: 'Shh-secret',
+  keys: ['Secret', 'rotation'],
+}));
 
 
 /* __________________
@@ -17,7 +23,18 @@ module.exports = (db) => {
       JOIN users ON users.id = owner_id
       GROUP BY users.id, maps.id`
     )
-      .then(maps => res.send(maps.rows));
+    .then(maps => res.send(maps.rows));
+  });
+
+  router.post("/", (req, res) => {
+    console.log(req.body)
+    db.query (
+      `INSERT
+      INTO maps (owner_id, title, thumbnail_url, description)
+      VALUES ('${req.session.id}','${req.body.title}', '${req.body.url}', '${req.body.description}')
+      RETURNING *`
+      )
+    .then(maps => res.send(maps.rows))
   });
 
 
@@ -46,11 +63,11 @@ module.exports = (db) => {
     //likely containing form data to update
   });
 
-  router.post("/", (req, res) => {
+  // router.post("/", (req, res) => {
 
-    //This will be a path for creating a new map in the database -- the request should
-    //be holding some form data for us to convert into a database store
-  });
+  //   //This will be a path for creating a new map in the database -- the request should
+  //   //be holding some form data for us to convert into a database store
+  // });
 
   router.post("/:id/delete", (req, res) => {
     // This will come from a delete button tied to a map
