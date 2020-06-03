@@ -1,7 +1,7 @@
 const createPinElement = function(pin) {
   console.log(pin)
   let $pin =
-  // creates map HTML with input from client
+  // creates pin HTML from db data
   `<section class="pin-info" data-pin-id="${pin.id}">
     <header>
       <p class="pin-title">${pin.title}</p>
@@ -13,6 +13,7 @@ const createPinElement = function(pin) {
   </section>`
   return $pin;
 };
+
 
 const renderPins = function(pins) {
 
@@ -29,9 +30,22 @@ const pinDisplay = function(mapId) {
 
   getPinDetails(mapId)
     .then(pins => {
-      console.log(pins)
       renderPins(pins)
+    })
+    .then(() => {
+      $(`.pin-info`).click(function() {
+        const pinId = this.dataset.pinId
 
+        userMarkers.forEach(marker => {
+
+          console.log(marker.title)
+          if (marker.title === pinId) {
+            marker.setAnimation(google.maps.Animation.BOUNCE)
+            setTimeout(()=> {marker.setAnimation(google.maps.Animation.null)} , 2000)
+          }
+        });
+
+      });
     })
 }
 

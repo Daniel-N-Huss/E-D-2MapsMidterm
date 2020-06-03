@@ -1,3 +1,5 @@
+const pinCardListener = function(){};
+
 const mapCardListener = function() {
   $(`.popular-maps`).click(function() {
     const mapId = this.dataset.mapId;
