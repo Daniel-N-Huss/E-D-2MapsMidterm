@@ -28,6 +28,18 @@ module.exports = (db) => {
     //This will send back a map, and all of it's associated data with pins joined on.
 
   });
+  router.get("/myMaps/:id", (req, res) => {
+    db.query(`SELECT *
+    FROM maps
+    JOIN users
+    ON owner_id = users.id
+    WHERE owner_id = ${req.params.id}
+    GROUP BY maps.id, users.id`)
+      .then(map => { res.send(map.rows)})
+
+    //This will send back all maps that belong to the user id
+
+  });
 
   router.post("/:id", (req, res) => {
     //This will be a path for editing the data for the map in the database,

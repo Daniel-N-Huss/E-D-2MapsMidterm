@@ -1,4 +1,10 @@
 const renderMaps = function(maps) {
+  // append Title
+  $('main.maps-container').append(
+    `
+    <h1>Popular Maps</h1>
+    `
+  );
   // loops through maps
   for (let i = 0; i < maps.length; i++) {
     // calls createMapElement for each map
