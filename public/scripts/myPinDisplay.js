@@ -12,8 +12,8 @@ const createMyPinElement = function(pin) {
 </div>
   </section>
   <div class="text-center" style="margin-bottom: 16px">
-  <button class="btn btn-primary">edit</button>
-      <button class="btn btn-primary">delete</button>
+  <button class="btn btn-primary" id="edit-button">edit</button>
+      <button class="btn btn-primary" id="delete-button">delete</button>
       <div>
       </div>`
   return $pin;
