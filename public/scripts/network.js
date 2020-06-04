@@ -39,6 +39,14 @@ const getPinDetails = function(mapId) {
 };
 
 
+const deletePin = function(pinId) {
+  return $.ajax({
+    url: `/api/pins/delete/${pinId}`,
+    method: 'POST'
+  });
+}
+
+
 // Users Requests
 
 
