@@ -15,11 +15,11 @@ function closeNav() {
 }
 
 function openPinsDisplay() {
-  document.getElementById("pins-display").style.width = "400px";
+  document.getElementById("pins-container").style.width = "400px";
 }
 
 function closePinsDisplay() {
-  document.getElementById("pins-display").style.width = "0";
+  document.getElementById("pins-container").style.width = "0";
 }
 
 function openNav2() {

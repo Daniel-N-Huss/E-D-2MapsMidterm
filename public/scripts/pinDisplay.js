@@ -3,11 +3,10 @@ const createPinElement = function(pin) {
   let $pin =
   // creates pin HTML from db data
   `<section class="pin-info" data-pin-id="${pin.id}">
-    <header>
+      <img src="${pin.thumbnail_url}" alt="Pin Icon">
+      <div class="pin-body">
       <p class="pin-title">${pin.title}</p>
-    </header>
-    <div class="pin-body">
-      <img src="${pin.thumbnail_url}" alt="Pin Icon"><p class="map-description"> ${pin.description}
+      <p class="map-description"> ${pin.description}
       </p>
     </div>
   </section>`

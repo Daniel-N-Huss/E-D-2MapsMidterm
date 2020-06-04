@@ -356,7 +356,7 @@ body {
           }
         }
       }
-      #pins-display {
+      .pins-container {
         height: 700px;
         width: 0;
         position: fixed;
@@ -366,29 +366,37 @@ body {
         overflow-x: hidden;
         transition: 0.5s;
         overflow: scroll;
-        h1 {
-          font-family: $accentFontStyle;
-          text-align: center;
-          color:black
+        .pins-button
+        #pins-display {
+          .pin-info{
+            display: flex;
+            background: $transparantBackground;
+            border-radius: 25px;
+            color: $primaryFontColor;
+            margin-bottom: 20px;
+            &:hover {
+              background-color:  rgba(0, 0, 0, 0.6);
+            }
+            img {
+              height:100px;
+              width:100px;
+              margin: 20px;
+            }
+          }
+          .pin-body {
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+            text-align: left;
+            .pin-title {
+              font-size: 20px;
+              font-family: $accentFontStyle;
+            }
+            .map-descripton {
+              font-size: 18px;
+              font-family: $primaryFontStyle
+            }
 
-        }
-
-      }
-      .pin-info{
-        background: $transparantBackground;
-        border-radius: 25px;
-        color: $primaryFontColor;
-        margin-bottom: 20px;
-        &:hover {
-          background-color:  rgba(0, 0, 0, 0.6);
-        }
-
-        .pin-body {
-          img {
-            height:100px;
-            width:100px;
-            margin-left: 10px;
-            margin-bottom: 10px;
           }
         }
       }
