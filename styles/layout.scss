@@ -357,14 +357,22 @@ body {
         }
       }
       #pins-display {
-        margin-top: 100px;
         height: 700px;
-        width: 0px;
-        margin: 5px;
-        overflow: scroll;
-        position:fixed;
+        width: 0;
+        position: fixed;
+        z-index: 100;
+        margin-top: 100px;
+        right: 2%;
+        overflow-x: hidden;
         transition: 0.5s;
-        font-family: $accentFontStyle;
+        overflow: scroll;
+        h1 {
+          font-family: $accentFontStyle;
+          text-align: center;
+          color:black
+
+        }
+
       }
       .pin-info{
         background: $transparantBackground;
