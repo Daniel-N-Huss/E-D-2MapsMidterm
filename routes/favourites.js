@@ -39,11 +39,36 @@ module.exports = (db) => {
 
   router.post('/user/add', (req, res) => {
     // This will come in with the logged in users id, and the id of the map they clicked favourite on
+    const { user_id, map_id } = req.query;
+    console.log("adding");
+    console.log(user_id);
+    console.log(map_id);
+
+
+    db.query (
+      `INSERT INTO favourites (user_id, map_id)
+      SELECT ${user_id}, ${map_id}
+      WHERE NOT EXISTS
+      ( SELECT user_id, map_id FROM favourites WHERE user_id = ${user_id} AND map_id = ${map_id})
+      RETURNING *`
+      )
+    .then(maps => res.send(maps.rows))
   });
 
 
-  router.post('/', (req, res) => {
-    // remove the favorite, perhaps clicking on the favourite button again?
+  router.post('/user/del', (req, res) => {
+    const { user_id, map_id } = req.query;
+    console.log("removing");
+    console.log(user_id);
+    console.log(map_id);
+
+    db.query (
+      `DELETE FROM favourites
+      WHERE user_id = ${user_id}
+      AND map_id = ${map_id}
+      RETURNING *`
+      )
+    .then(maps => res.send(maps.rows))
   });
 
 

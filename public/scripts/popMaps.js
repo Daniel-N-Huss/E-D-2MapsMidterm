@@ -15,7 +15,7 @@ const renderMaps = function(maps) {
       const currentMap = createMapElement(maps[i]);
       // takes return value and appends it to the maps container
       $('main.maps-container').append(currentMap);
-      favoriteButtonListener(maps[i].id);
+      favoriteButtonListener(isloggedin, maps[i]);
     }
   })
 };
@@ -87,7 +87,7 @@ const createMapElement = function(map) {
 
 const loadMaps = () => $.get('/api/maps', JSON)
 .done(function (response) {
-  // $('.maps-container').empty();
+  $('.maps-container').empty();
   isLoggedIn().then(()=>{
     renderMaps(response);
     mapCardListener();
@@ -127,11 +127,31 @@ const mapIdCheck = function(maps, map) {
   return bool;
 }
 
-const favoriteButtonListener = function(id) {
-  $(`#favourite-icon-${id}`).click(function(event) {
-    console.log("Favorite button"+id);
+
+const favoriteButtonListener = function(user_id, map) {
+  const map_id = map.id;
+  $(`#favourite-icon-${map_id}`).click(function(event) {
+    console.log("Favorite button"+map_id+user_id+mapIdCheck(favourite,map));
+    if (!mapIdCheck(favourite, map)){
+      $.post(`/api/favourites/user/add/?user_id=${user_id}&map_id=${map_id}`)
+      .done(function (response) {
+      console.log(response);
+      $(`#favourite-icon-${map_id}`).replaceWith(`<span class="material-icons" id="favourite-icon-${map.id}"> favorite </span>`)
+    })
+    } else {
+      $.post(`/api/favourites/user/del/?user_id=${user_id}&map_id=${map_id}`)
+      .done(function (response) {
+      console.log(response);
+      $(`#favourite-icon-${map_id}`).replaceWith(`<span class="material-icons" id="favourite-icon-${map.id}"> favorite_border </span>`)
+    })
+    }
+    isFavourite(isloggedin).then(()=>{
+      favoriteButtonListener(user_id, map);
+    })
+
   })
 }
+
 
 
 
