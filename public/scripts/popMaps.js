@@ -93,7 +93,6 @@ const loadMaps = () => $.get('/api/maps')
     console.log(response);
 
     renderMaps(response);
-    // mapCardListener();
   })
 });
 
