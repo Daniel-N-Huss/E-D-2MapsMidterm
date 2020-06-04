@@ -22,12 +22,8 @@ module.exports = (db) => {
     HAVING map_id = ${mapId}
     `)
       .then(data => {
-<<<<<<< HEAD
         console.log(data.rows);
 
-=======
-        console.log(data)
->>>>>>> 255a1a5bb4b0d896e0e0b56752462a9cc34fd6f0
         let pins = data.rows
         pins.forEach(pin => {
           console.log(pin);
