@@ -33,7 +33,7 @@ const pinDisplay = function(mapId) {
       renderPins(pins)
     })
     .then(() => {
-      $(`.pin-info`).click(function() {
+      $(`.pin-info`).mouseover(function() {
         const pinId = this.dataset.pinId
 
         userMarkers.forEach(marker => {

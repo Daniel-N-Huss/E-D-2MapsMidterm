@@ -423,7 +423,47 @@ body #mainframe #right #pins-display .pin-info:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-body #mainframe #right #pins-display .pin-info .pin-body img {
+body #mainframe #right #pins-display .pin-info #pins-display {
+  position: relative;
+  z-index: 100;
+  margin-top: 100px;
+  height: 700px;
+  width: 300px;
+  margin: 5px;
+  overflow: scroll;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-family: "Bebas Neue", cursive;
+}
+
+body #mainframe #right #pins-display .pin-info #pins-display #closebtn2 {
+  text-align: right;
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: WHITE;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+body #mainframe #right #pins-display .pin-info #pins-display #closebtn2:hover {
+  -webkit-transform: skewX(-15deg);
+          transform: skewX(-15deg);
+}
+
+body #mainframe #right #pins-display .pin-info .pin-info {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  color: WHITE;
+  margin-bottom: 20px;
+}
+
+body #mainframe #right #pins-display .pin-info .pin-info:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+body #mainframe #right #pins-display .pin-info .pin-info .pin-body img {
   height: 100px;
   width: 100px;
   margin-left: 10px;
