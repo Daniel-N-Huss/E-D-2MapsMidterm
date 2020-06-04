@@ -10,6 +10,8 @@ const createPinElement = function(pin) {
       <img src="${pin.thumbnail_url}" alt="Pin Icon"><p class="map-description"> ${pin.description}
       </p>
     </div>
+    <button type="button" id="edit${pin.id}" class="btn btn-info">Edit</button>
+    <button type="button" id=delete${pin.id}class="btn btn-danger">Delete</button>
   </section>`
   return $pin;
 };
@@ -44,7 +46,6 @@ const pinDisplay = function(mapId) {
             setTimeout(()=> {marker.setAnimation(google.maps.Animation.null)} , 2000)
           }
         });
-
       });
     })
 }
