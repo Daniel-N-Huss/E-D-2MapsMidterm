@@ -10,7 +10,10 @@ $(document).ready(function () {
       //Attach new pin button to pins display that would open user-map-input2
       // call pinDisplay(mapId)
       $( "#create-pin" ).replaceWith( `<h1>${maps.title}</h1>` );
-      mapsID = maps.id;
+
+      $(".user-map-input").each(function(){
+        this.reset();
+    });
     })
   });
 
@@ -36,12 +39,10 @@ $(document).ready(function () {
 
       $(".user-map-input2").each(function(){
         this.reset();
+        markers[0].setMap(null)
     });
     })
   });
-
-
-
 
 });
 

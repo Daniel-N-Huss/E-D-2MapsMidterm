@@ -39,9 +39,6 @@ body {
 
       nav {
         @include inFrontMap();
-        // display:flex;
-        // justify-content: space-between;
-        // align-items: center;
         margin: 10vh 60px 10px 60px;
         padding: 10px;
         width: 250px;
@@ -155,7 +152,7 @@ body {
         margin-top: 100px;
         width: 750px;
         overflow: scroll;
-        height: 700px;
+        max-height: 700px;
         padding-right: 20px;
         transition: 0.5s;
         font-family: $primaryFontStyle;
@@ -213,11 +210,6 @@ body {
             margin-left: 20px;
             margin-right: 20px;
             font-size: 10px;
-            // span {
-            //   display: flex;
-            //   flex-direction: row;
-            //   border: 1px solid red;
-            // }
           }
         }
       }
