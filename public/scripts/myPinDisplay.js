@@ -4,15 +4,12 @@ const createMyPinElement = function(pin) {
   // creates pin HTML from db data
   `<div>
   <section class="pin-info text-center" data-pin-id="${pin.id}" >
-    <header>
-      <p class="pin-title">My map ${pin.title}</p>
-    </header>
-    <div class="pin-body" id="pin-card">
-      <img src="${pin.thumbnail_url}" alt="Pin Icon">
-      <p class="map-description">
-      ${pin.description}
-      </p>
-    </div>
+  <img src="${pin.thumbnail_url}" alt="Pin Icon">
+  <div class="pin-body">
+  <p class="pin-title">${pin.title}</p>
+  <p class="map-description"> ${pin.description}
+  </p>
+</div>
   </section>
   <div class="text-center" style="margin-bottom: 16px">
   <button class="btn btn-primary">edit</button>

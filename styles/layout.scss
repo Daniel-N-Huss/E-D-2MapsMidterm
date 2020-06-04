@@ -366,7 +366,10 @@ body {
         overflow-x: hidden;
         transition: 0.5s;
         overflow: scroll;
-        .pins-button
+
+        .pins-button {
+          font-family: $accentFontStyle
+        }
         #pins-display {
           .pin-info{
             display: flex;
