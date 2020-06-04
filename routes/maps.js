@@ -27,14 +27,17 @@ module.exports = (db) => {
   });
 
   router.post("/", (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     db.query (
       `INSERT
       INTO maps (owner_id, title, thumbnail_url, description)
       VALUES ('${req.session.id}','${req.body.title}', '${req.body.url}', '${req.body.description}')
       RETURNING *`
       )
-    .then(maps => res.send(maps.rows))
+    .then(maps => {
+      res.send(maps.rows[0])
+    })
+
   });
 
 
