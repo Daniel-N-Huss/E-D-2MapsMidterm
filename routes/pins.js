@@ -21,6 +21,7 @@ module.exports = (db) => {
     HAVING map_id = ${mapId}
     `)
       .then(data => {
+        console.log(data)
         let pins = data.rows
         pins.forEach(pin => {
           pin.geo_location = JSON.parse(pin.geo_location);

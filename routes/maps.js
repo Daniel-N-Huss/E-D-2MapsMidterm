@@ -18,7 +18,7 @@ module.exports = (db) => {
 
   router.get("/", (req, res) => {
     db.query(
-      `SELECT *
+      `SELECT maps.*, users.username
       FROM maps
       JOIN users ON users.id = owner_id
       GROUP BY users.id, maps.id`
