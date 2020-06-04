@@ -15,7 +15,7 @@ const renderMyMaps = function(maps) {
       const currentMap = createMapElement(maps[i]);
       // takes return value and appends it to the maps container
       $('main.maps-container').append(currentMap);
-      mapCardListener(`${maps[i].id}`);
+      myMapCardListener(`${maps[i].id}`);
       favoriteButtonListener(isloggedin, maps[i]);
     }
   })
