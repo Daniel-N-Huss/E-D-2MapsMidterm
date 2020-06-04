@@ -24,7 +24,6 @@ module.exports = (db) => {
         let pins = data.rows
         pins.forEach(pin => {
           pin.geo_location = JSON.parse(pin.geo_location);
-          console.log(typeof pin.geo_location);
 
         });
         res.send(pins);
@@ -39,14 +38,21 @@ module.exports = (db) => {
     //Joined onto the map called
   });
 
-  router.get('/:id', (req, res) => {
+  router.get('/', (req, res) => {
 
+    const { mapId } = req.query;
     db.query(
-      `SELECT *
+      `SELECT pins.id, maps.id as map_id, pins.title, pins.thumbnail_url, pins.description, pins.geo_location
       FROM pins
-      WHERE id = ${req.params.id}`
+      JOIN maps ON maps.id = map_id
+      WHERE map_id = ${mapId}
+      `
     ).then(data => {
-      const pinData = data.rows[0];
+
+
+      const pinData = data.rows;
+      console.log("pinData", pinData)
+
       res.send(pinData);
     })
       .catch(err => {
@@ -63,7 +69,14 @@ module.exports = (db) => {
   });
 
   router.post('/', (req, res) => {
-    //request coming in to save a new pin, should contain all the data of the pin when it's created
+    console.log(req)
+    db.query (
+      `INSERT
+      INTO pins (title, description, thumbnail_url)
+      VALUES ('${req.body.title}', '${req.body.description}', '${req.body.url}')
+      RETURNING *`
+      )
+    .then(pin => res.send(pin.rows))
   });
 
   router.post('/', (req, res) => {

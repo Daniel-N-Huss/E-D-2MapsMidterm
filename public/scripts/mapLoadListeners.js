@@ -1,3 +1,5 @@
+const pinCardListener = function(){};
+
 const mapCardListener = function() {
   $(`.popular-maps`).click(function() {
     const mapId = this.dataset.mapId;
@@ -10,8 +12,14 @@ const mapCardListener = function() {
       userMarkers = []
       pinPainter(mapId);
     }
+    clearPinDisplay();
+
     refreshMap();
 
-    openPinInfo();
+    moveMaps();
+    openPinsDisplay();
+
+    pinDisplay(mapId);
+
   });
 }

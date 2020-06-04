@@ -14,11 +14,11 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
 }
 
-function openPinInfo() {
-  document.getElementById("pins-display").style.width = "300px";
+function openPinsDisplay() {
+  document.getElementById("pins-display").style.width = "400px";
 }
 
-function closePinInfo() {
+function closePinsDisplay() {
   document.getElementById("pins-display").style.width = "0";
 }
 
