@@ -1,9 +1,9 @@
 const pinCardListener = function(){};
 
 const mapCardListener = function(mapId) {
-  console.log("#data-map-" + mapId);
+  console.log("#map-body-" + mapId);
 
-  $("#data-map-" + mapId).click(function() {
+  $("#map-body-" + mapId).click(function() {
 
 
     // const mapId = this.dataset.mapId;
