@@ -15,6 +15,7 @@ const renderMaps = function(maps) {
       const currentMap = createMapElement(maps[i]);
       // takes return value and appends it to the maps container
       $('main.maps-container').append(currentMap);
+      mapCardListener(`${maps[i].id}`);
       favoriteButtonListener(isloggedin, maps[i]);
     }
   })
@@ -29,7 +30,7 @@ const createMapElement = function(map) {
     if (mapIdCheck(favourite,map)){
       $map =
       // creates map HTML that is favourited
-        `<section class="popular-maps" data-map-id="${map.id}">
+        `<section class="popular-maps" id="data-map-${map.id}">
         <header>
           <p class="map-title">${map.title}</p>
           <p class="owner-id">${map.username}</p>
@@ -46,7 +47,7 @@ const createMapElement = function(map) {
     } else {
       $map =
       // creates map HTML that is not favourited
-      `<section class="popular-maps" data-map-id="${map.id}">
+      `<section class="popular-maps" id="data-map-${map.id}">
         <header>
           <p class="map-title">${map.title}</p>
           <p class="owner-id">${map.username}</p>
@@ -65,7 +66,7 @@ const createMapElement = function(map) {
   } else {
     $map =
   // creates map HTML without favourite button
-  `<section class="popular-maps" data-map-id="${map.id}">
+  `<section class="popular-maps" id="data-map-${map.id}">
     <header>
       <p class="map-title">${map.title}</p>
       <p class="owner-id">${map.username}</p>
@@ -89,8 +90,10 @@ const loadMaps = () => $.get('/api/maps', JSON)
 .done(function (response) {
   $('.maps-container').empty();
   isLoggedIn().then(()=>{
+    console.log(response);
+
     renderMaps(response);
-    mapCardListener();
+    // mapCardListener();
   })
 });
 
