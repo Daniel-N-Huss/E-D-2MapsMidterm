@@ -41,7 +41,7 @@ const logoutListener = function(response) {
 const loginListener = function() {
   $(".login").submit(function(event) {
     event.preventDefault();
-    $.get('/api/users/login/1')
+    $.get('/api/users/login/2')
     .done(function (response) {
       $('.menu').empty();
       $.get(`/api/users/${response}`, JSON)

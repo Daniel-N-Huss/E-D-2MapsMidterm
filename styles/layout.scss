@@ -357,35 +357,33 @@ body {
         }
       }
       #pins-display {
-        @include inFrontMap();
         margin-top: 100px;
         height: 700px;
-        width: 300px;
+        width: 0px;
         margin: 5px;
         overflow: scroll;
         position:fixed;
         transition: 0.5s;
         font-family: $accentFontStyle;
-}
-        .pin-info{
-          background: $transparantBackground;
-          border-radius: 25px;
-          color: $primaryFontColor;
-          margin-bottom: 20px;
-          &:hover {
-            background-color:  rgba(0, 0, 0, 0.6);
-          }
+      }
+      .pin-info{
+        background: $transparantBackground;
+        border-radius: 25px;
+        color: $primaryFontColor;
+        margin-bottom: 20px;
+        &:hover {
+          background-color:  rgba(0, 0, 0, 0.6);
+        }
 
-          .pin-body {
-
-            img {
-              height:100px;
-              width:100px;
-              margin-left: 10px;
-              margin-bottom: 10px;
-            }
+        .pin-body {
+          img {
+            height:100px;
+            width:100px;
+            margin-left: 10px;
+            margin-bottom: 10px;
           }
+        }
+      }
     }
   }
 };
-}

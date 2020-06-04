@@ -3,13 +3,18 @@ $(document).ready(function () {
 
   $(".user-map-input").submit(function(event) {
     event.preventDefault();
-    // alert( "HANDLER FOR MAP SUBMIT" );
-
+    // alert( "HANDLER FOR MAP SUBMIT" );\
+    // refreshMap()
+    for (let i = 0; i < userMarkers.length; i++) {
+      userMarkers[i].setMap(null)
+    }
+    userMarkers = []
     $.post('/api/maps/', $(this).serialize())
     .then(maps => {
       //Attach new pin button to pins display that would open user-map-input2
       // call pinDisplay(mapId)
       $( "#create-pin" ).replaceWith( `<h1>${maps.title}</h1>` );
+      mapsID = maps.id;
 
       $(".user-map-input").each(function(){
         this.reset();
