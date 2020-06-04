@@ -49,7 +49,7 @@ module.exports = (db) => {
 
   });
   router.get("/myMaps/:id", (req, res) => {
-    db.query(`SELECT *
+    db.query(`SELECT maps.*, users.username
     FROM maps
     JOIN users
     ON owner_id = users.id

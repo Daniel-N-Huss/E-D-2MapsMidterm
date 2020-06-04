@@ -45,7 +45,7 @@ const renderMyMaps = function(maps) {
 
 const loadMyMaps = function(id) {
 
-  $.get(`/api/maps/myMaps/${id}`, JSON)
+  $.get(`/api/maps/myMaps/${id}`)
   .done(function (response) {
     $('.maps-container').empty();
     renderMyMaps(response);
