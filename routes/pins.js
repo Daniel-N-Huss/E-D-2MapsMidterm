@@ -12,6 +12,7 @@ module.exports = (db) => {
   //retrieve all pins for a map
   router.get('/map/', (req, res) => {
     const { mapId } = req.query;
+    console.log("in map");
 
     db.query(`
     SELECT pins.id, pins.geo_location
@@ -21,13 +22,21 @@ module.exports = (db) => {
     HAVING map_id = ${mapId}
     `)
       .then(data => {
-        console.log(data)
+        console.log(data.rows);
+
         let pins = data.rows
         pins.forEach(pin => {
+          console.log(pin);
+
           pin.geo_location = JSON.parse(pin.geo_location);
+          console.log(pin.geo_location);
+
 
         });
+        console.log(pins);
         res.send(pins);
+
+
       })
         .catch(err => {
         res

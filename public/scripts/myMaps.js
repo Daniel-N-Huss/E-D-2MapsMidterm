@@ -8,12 +8,17 @@ const renderMyMaps = function(maps) {
   // loops through maps
   console.log(maps);
 
-  for (let i = 0; i < maps.length; i++) {
-    // calls createMapElement for each map
-    const currentMap = createMapElement(maps[i]);
-    // takes return value and appends it to the maps container
-    $('main.maps-container').append(currentMap);
-  }
+  isFavourite(isloggedin).then(()=>{
+    for (let i = 0; i < maps.length; i++) {
+      // calls createMapElement for each map
+      console.log('this is maps[i]', maps[i])
+      const currentMap = createMapElement(maps[i]);
+      // takes return value and appends it to the maps container
+      $('main.maps-container').append(currentMap);
+      mapCardListener(`${maps[i].id}`);
+      favoriteButtonListener(isloggedin, maps[i]);
+    }
+  })
 };
 
 // //Function to create the Element that hosts the map, and to apply
