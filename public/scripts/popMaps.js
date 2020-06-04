@@ -11,7 +11,7 @@ const renderMaps = function(maps) {
   isFavourite(isloggedin).then(()=>{
     for (let i = 0; i < maps.length; i++) {
       // calls createMapElement for each map
-
+      console.log('this is maps[i]', maps[i])
       const currentMap = createMapElement(maps[i]);
       // takes return value and appends it to the maps container
       $('main.maps-container').append(currentMap);
@@ -86,7 +86,7 @@ const createMapElement = function(map) {
 };
 
 
-const loadMaps = () => $.get('/api/maps', JSON)
+const loadMaps = () => $.get('/api/maps')
 .done(function (response) {
   $('.maps-container').empty();
   isLoggedIn().then(()=>{
