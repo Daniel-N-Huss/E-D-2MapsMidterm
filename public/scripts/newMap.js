@@ -45,7 +45,10 @@ $(document).ready(function () {
       $(".user-map-input2").each(function(){
         this.reset();
         markers[0].setMap(null)
-    });
+      });
+      pinDisplay(mapsID);
+      pinPainter(mapsID);
+
     })
   });
 
