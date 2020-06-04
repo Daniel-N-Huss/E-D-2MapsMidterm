@@ -2,15 +2,23 @@ const createMyPinElement = function(pin) {
   console.log(pin)
   let $pin =
   // creates pin HTML from db data
-  `<section class="pin-info" data-pin-id="${pin.id}">
+  `<div>
+  <section class="pin-info text-center" data-pin-id="${pin.id}" >
     <header>
       <p class="pin-title">My map ${pin.title}</p>
     </header>
-    <div class="pin-body">
-      <img src="${pin.thumbnail_url}" alt="Pin Icon"><p class="map-description"> ${pin.description}
+    <div class="pin-body" id="pin-card">
+      <img src="${pin.thumbnail_url}" alt="Pin Icon">
+      <p class="map-description">
+      ${pin.description}
       </p>
     </div>
-  </section>`
+  </section>
+  <div class="text-center" style="margin-bottom: 16px">
+  <button class="btn btn-primary">edit</button>
+      <button class="btn btn-primary">delete</button>
+      <div>
+      </div>`
   return $pin;
 };
 
