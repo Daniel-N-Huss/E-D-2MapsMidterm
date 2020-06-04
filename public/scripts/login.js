@@ -50,10 +50,10 @@ const loginListener = function() {
         $('.menu').append(
           `
           <a href="#">Logged in as: ${response[0].username}</a>
-          <a href="#" class="favourites" onclick="closeNav(); moveMapsBack()" >Favourites</a>
-          <a href="#" class="myMaps" onclick="closeNav(); moveMapsBack()">My Maps</a>
-          <a onclick="openNav(); moveMaps()" href="#">New Map</a>
-          <a href="#" class="logout" onclick="closeNav(); moveMapsBack()">Logout</a>
+          <a href="#" class="favourites" onclick="closeOverlays(); moveMapsBack()" >Favourites</a>
+          <a href="#" class="myMaps" onclick="closeOverlays(); moveMapsBack()">My Maps</a>
+          <a onclick="closeOverlays(); openNav();" href="#">New Map</a>
+          <a href="#" class="logout" onclick="closeOverlays(); moveMapsBack()">Logout</a>
 
                 `
         )// add clearing function in logout
