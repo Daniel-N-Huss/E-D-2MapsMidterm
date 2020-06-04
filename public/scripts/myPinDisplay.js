@@ -20,12 +20,17 @@ const createMyPinElement = function(pin) {
 };
 
 
+
+
 const renderMyPins = function(pins) {
 
   for (let i = 0; i < pins.length; i++) {
     const currentPin = createMyPinElement(pins[i]);
     $('#pins-display').append(currentPin);
   }
+  $('#pins-display').append(
+  '<button id="pin-submit" type="submit" class="btn btn-primary pins-button" onClick="openPinsDisplay()"> add more pins!</button>'
+  )
 };
 
 
