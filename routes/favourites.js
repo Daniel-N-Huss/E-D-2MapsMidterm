@@ -37,9 +37,10 @@ module.exports = (db) => {
   });
 
 
-  router.post('/', (req, res) => {
+  router.post('/user/add', (req, res) => {
     // This will come in with the logged in users id, and the id of the map they clicked favourite on
   });
+
 
   router.post('/', (req, res) => {
     // remove the favorite, perhaps clicking on the favourite button again?
