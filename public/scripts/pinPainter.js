@@ -12,7 +12,18 @@ const pinPainter = function(map_id) {
         }))
 
       })
-  });
+
+      userMarkers.forEach(marker => {
+        marker.addListener('mouseover', ()=> {
+          $(`section:contains(${marker.getTitle()}`).animate({'margin': '+=50px'}, 500);
+        })
+        marker.addListener('mouseout', ()=> {
+          $(`section:contains(${marker.getTitle()}`).animate({'margin': '-=50px'}, 500);
+        })
+
+      });
+
+    });
 };
 
 

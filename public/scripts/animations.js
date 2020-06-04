@@ -29,3 +29,10 @@ function openNav2() {
 function closeNav2() {
   document.getElementById("mySidenav2").style.width = "0";
 }
+
+const closeOverlays = function () {
+  moveMaps();
+  closeNav();
+  closePinsDisplay();
+  closeNav2();
+}

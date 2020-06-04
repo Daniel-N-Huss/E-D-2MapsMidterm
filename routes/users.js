@@ -26,7 +26,7 @@ module.exports = (db) => {
     console.log("checking");
     // console.log(req.session.id);
     // console.log(req.session.id? true:false);
-    res.status(200).send(req.session.id? true:false);
+    res.status(200).send(req.session.id);
   })
 
   router.get("/", (req, res) => {
