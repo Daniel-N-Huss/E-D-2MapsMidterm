@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
   {
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src= "https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=initAutocomplete";
+    script.src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyDULpIxFp_-eO_89aWF2od0f-aa8bnuNK8&libraries=places&callback=initAutocomplete";
     script.async = true;
 
     document.getElementsByTagName('head')[0].appendChild(script);
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 let map;
 let userMarkers = [];
-
+let markers = [];
 
 window.initAutocomplete = function() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -67,11 +67,13 @@ window.initAutocomplete = function() {
     searchBox.setBounds(map.getBounds());
   });
 
-  var markers = [];
+  markers = [];
+  console.log(markers)
   // Listen for the event fired when the user selects a prediction and retrieve
   // more details for that place.
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
+
 
     if (places.length == 0) {
       return;
@@ -103,8 +105,10 @@ window.initAutocomplete = function() {
         map: map,
         icon: icon,
         title: place.name,
-        position: place.geometry.location
+        position: place.geometry.location,
+        clickable: true,
       }));
+      console.log('HEY THIS MIGHT BE SOME GEO LOCATION DATA? -> ' + markers[0].getPosition())
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.

@@ -70,10 +70,11 @@ module.exports = (db) => {
 
   router.post('/', (req, res) => {
     console.log(req)
+    //deserialize or pass it
     db.query (
       `INSERT
-      INTO pins (title, description, thumbnail_url)
-      VALUES ('${req.body.title}', '${req.body.description}', '${req.body.url}')
+      INTO pins (title, description, thumbnail_url, geo_location, map_id)
+      VALUES ('${req.body.title}', '${req.body.description}', '${req.body.url}', '${req.body.Geo_location}', '${req.body.map_id}')
       RETURNING *`
       )
     .then(pin => res.send(pin.rows))

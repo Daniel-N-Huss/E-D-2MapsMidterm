@@ -397,4 +397,36 @@ body #mainframe #right .sidenav2 .create-Map2 a:hover {
   -webkit-transform: skewX(-15deg);
           transform: skewX(-15deg);
 }
+
+body #mainframe #right #pins-display {
+  position: relative;
+  z-index: 100;
+  margin-top: 100px;
+  height: 700px;
+  width: 0px;
+  margin: 5px;
+  overflow: scroll;
+  position: fixed;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  font-family: "Bebas Neue", cursive;
+}
+
+body #mainframe #right #pins-display .pin-info {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 25px;
+  color: WHITE;
+  margin-bottom: 20px;
+}
+
+body #mainframe #right #pins-display .pin-info:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+body #mainframe #right #pins-display .pin-info .pin-body img {
+  height: 100px;
+  width: 100px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
 /*# sourceMappingURL=layout.css.map */
