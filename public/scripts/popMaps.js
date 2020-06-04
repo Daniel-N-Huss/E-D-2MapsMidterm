@@ -35,7 +35,7 @@ const createMapElement = function(map) {
           <p class="map-title">${map.title}</p>
           <p class="owner-id">${map.username}</p>
         </header>
-        <div class="map-body">
+        <div class="map-body" id="map-body-${map.id}">
           <img src="${map.thumbnail_url}" alt="Map Icon"><p class="map-description"> ${map.description}
           </p>
         </div>
@@ -52,7 +52,7 @@ const createMapElement = function(map) {
           <p class="map-title">${map.title}</p>
           <p class="owner-id">${map.username}</p>
         </header>
-        <div class="map-body">
+        <div class="map-body" id="map-body-${map.id}">
           <img src="${map.thumbnail_url}" alt="Map Icon"><p class="map-description"> ${map.description}
           </p>
         </div>
@@ -71,7 +71,7 @@ const createMapElement = function(map) {
       <p class="map-title">${map.title}</p>
       <p class="owner-id">${map.username}</p>
     </header>
-    <div class="map-body">
+    <div class="map-body" id="map-body-${map.id}">
       <img src="${map.thumbnail_url}" alt="Map Icon"><p class="map-description"> ${map.description}
       </p>
     </div>
