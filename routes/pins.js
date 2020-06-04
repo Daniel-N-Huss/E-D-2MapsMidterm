@@ -64,10 +64,17 @@ module.exports = (db) => {
 
   });
 
-  router.post('/:id', (req, res) => {
+  router.post('/delete/:id', (req, res) => {
+    const { pin_id } = req.query
+    db.query(`DELETE
+    FROM pins
+    WHERE pin.id = ${pin_id}
+    `)
     //a post request to change the details of a particular pin
     //this will come in with form data, and respond with a promise returning the edited table data
   });
+
+  router.post('')
 
   router.post('/', (req, res) => {
     console.log(req)
