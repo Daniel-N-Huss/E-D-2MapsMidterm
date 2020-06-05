@@ -1,6 +1,3 @@
-INSERT INTO maps (title, thumbnail_url, description, owner_id) VALUES ('Best Schools in Vancouver', 'https://d2mvzyuse3lwjc.cloudfront.net/doc/en/UserGuide/images/Heat_Map_Labels/Heatmap_with_Labels-01.png?v=79868', 'A collection of education services to investigate on your road to a career', 1);
-INSERT INTO maps (title, thumbnail_url, description, owner_id) VALUES ('Neato Coffee Places', 'https://i.imgur.com/Q1pA96P.jpg', 'The most hipster coffee in Vancouver', 2);
-INSERT INTO maps (title, thumbnail_url, description, owner_id) VALUES ('Places Emily Likes To Visit', 'https://static.vinepair.com/wp-content/uploads/2018/06/beer-bubble-cover-mobile.jpg', 'Best breweries in Port Moody', 3);
-
-
-
+INSERT INTO maps (title, thumbnail_url, description, owner_id) VALUES ('Best Schools in Vancouver', 'https://pbs.twimg.com/profile_images/1197911268939550720/33RhGxsO_400x400.jpg', 'A collection of education services to investigate on your road to a career', 1);
+INSERT INTO maps (title, thumbnail_url, description, owner_id) VALUES ('Neato Coffee Places', 'https://cdn.shopify.com/s/files/1/0831/4141/files/unnamed_1c58345f-04cb-4efa-a327-58ac717deba0.jpg?v=1588327975', 'The most hipster coffee in Vancouver', 2);
+INSERT INTO maps (title, thumbnail_url, description, owner_id) VALUES ('Places Emily Likes To Visit', 'https://www.vmcdn.ca/f/files/via/import/2017/06/08194240_sandbar.jpg;w=960', 'Cool Tourist Spots in Van', 3);
