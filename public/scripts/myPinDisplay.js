@@ -12,7 +12,7 @@ const createMyPinElement = function(pin) {
 </div>
   </section>
   <div class="text-center" style="margin-bottom: 16px">
-  <button class="btn btn-primary" id="edit-button-${pin.id}" onClick="closePinsDisplay(); openNav2()">edit</button>
+  <button class="btn btn-primary" id="edit-button-${pin.id}" onClick="closePinsDisplay(); openNav2(); addMapID(${pin.map_id})">edit</button>
       <button class="btn btn-primary" id="delete-button-${pin.id}">delete</button>
       <div>
       </div>`
