@@ -74,7 +74,9 @@ module.exports = (db) => {
   });
 
   router.post('/delete/:id', (req, res) => {
-    const { pin_id } = req.query
+    const pin_id  = req.params.id;
+    console.log("in delete",pin_id);
+
     db.query(`DELETE
     FROM pins
     WHERE pins.id = ${pin_id}
