@@ -1,5 +1,5 @@
 const createMyPinElement = function(pin) {
-  console.log(pin)
+  console.log('pin', pin)
   let $pin =
   // creates pin HTML from db data
   `<div>
@@ -19,21 +19,20 @@ const createMyPinElement = function(pin) {
   return $pin;
 };
 
-const renderMyPins = function(pins) {
 
+const renderMyPins = function(pins) {
+  console.log('pins', pins)
   for (let i = 0; i < pins.length; i++) {
     const currentPin = createMyPinElement(pins[i]);
     $('#pins-display').append(currentPin);
     deleteButtonListener(pins[i].id);
   }
   $('#pins-display').append(
-  '<button id="pin-submit" type="submit" class="btn btn-primary pins-button" onClick="closePinsDisplay(); openNav2()"> add more pins!</button>'
-  )
-
+  `<button id="pin-submit" type="submit" class="btn btn-primary pins-button" onClick="closePinsDisplay(); openNav2(); addMapID(${pins[0].map_id})"> add more pins!</button>`)
+console.log('line 35', pins[0].map_id)
 };
 
 const myPinDisplay = function(mapId) {
-
 
   getPinDetails(mapId)
     .then(pins => {
@@ -51,11 +50,13 @@ const myPinDisplay = function(mapId) {
             setTimeout(()=> {marker.setAnimation(google.maps.Animation.null)} , 2000)
           }
         });
-
       });
     })
 }
 
+const addPinListener = function (map_id) {
+
+}
 
 const deleteButtonListener = function(pin_id) {
   console.log("delete", pin_id);

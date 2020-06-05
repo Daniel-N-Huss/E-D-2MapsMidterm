@@ -78,9 +78,10 @@
         </div>
         <div id="mySidenav2" class="sidenav2">
           <h1 id="create-pin">Your Map</h1>
-          <div class="create-Map2">
+          <div class="create-Map2" data=>
             <a href="javascript:void(0)" id="closebtn2" onclick="closeNav2()">&times;</a>
             <form class="user-map-input2 text-center" action="/api/pins/" method="POST">
+              <input type="hidden" name="map_id" id="map_ID"> </input>
               <label class ="text-center" for="pin-search" class="text-center" >Search for cool places:</label>
               <input id="pac-input" class="controls" type="text" name="pin-search" placeholder="Search">
               <label for="title">What's this place called?</label>

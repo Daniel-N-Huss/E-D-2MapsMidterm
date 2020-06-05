@@ -1,5 +1,6 @@
 $(document).ready(function () {
   let mapsID;
+  console.log('hello')
 
   $(".user-map-input").submit(function(event) {
     event.preventDefault();
@@ -14,6 +15,7 @@ $(document).ready(function () {
       //Attach new pin button to pins display that would open user-map-input2
       // call pinDisplay(mapId)
       $( "#create-pin" ).replaceWith( `<h1>${maps.title}</h1>` );
+      $( "#map_ID" ).val(maps.id);
       mapsID = maps.id;
 
       $(".user-map-input").each(function(){
@@ -36,8 +38,7 @@ $(document).ready(function () {
 
     const data = $(this).serializeArray()
     data.push({name:'Geo_location', value:JSON.stringify(position)})
-    data.push({name:'map_id', value:mapsID})
-    console.log(data)
+    // data.push({name:'map_id', value: mapsID})
     $.post('/api/pins/', data)
     .done(function(response) {
       // console.log('this is logging the response back from the maps.js route' + response)
@@ -52,6 +53,5 @@ $(document).ready(function () {
 
     })
   });
-
 });
 
