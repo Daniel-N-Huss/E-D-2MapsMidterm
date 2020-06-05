@@ -12,8 +12,8 @@ const createMyPinElement = function(pin) {
 </div>
   </section>
   <div class="text-center" style="margin-bottom: 16px">
-  <button class="btn btn-primary" id="edit-button">edit</button>
-      <button class="btn btn-primary" id="delete-button">delete</button>
+  <button class="btn btn-primary" id="edit-button-${pin.id}">edit</button>
+      <button class="btn btn-primary" id="delete-button-${pin.id}">delete</button>
       <div>
       </div>`
   return $pin;
@@ -27,10 +27,12 @@ const renderMyPins = function(pins) {
   for (let i = 0; i < pins.length; i++) {
     const currentPin = createMyPinElement(pins[i]);
     $('#pins-display').append(currentPin);
+    deleteButtonListener(pins[i].id);
   }
   $('#pins-display').append(
   '<button id="pin-submit" type="submit" class="btn btn-primary pins-button" onClick="openPinsDisplay()"> add more pins!</button>'
   )
+
 };
 
 
@@ -60,4 +62,23 @@ const myPinDisplay = function(mapId) {
 }
 
 
+const deleteButtonListener = function(pin_id) {
+  console.log("delete", pin_id);
 
+  $(`#delete-button-${pin_id}`).click(function(event) {
+    console.log("del ",pin_id);
+
+
+
+    //   $.post(`/api/favourites/user/add/?user_id=${user_id}&map_id=${map_id}`)
+    //   .done(function (response) {
+    //   console.log(response);
+    //   $(`#favourite-icon-${map_id}`).replaceWith(`<span class="material-icons" id="favourite-icon-${map.id}"> favorite </span>`)
+    // })
+
+    // isFavourite(isloggedin).then(()=>{
+    //   favoriteButtonListener(user_id, map);
+    // })
+
+  })
+}
