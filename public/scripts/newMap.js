@@ -47,7 +47,7 @@ $(document).ready(function () {
         markers[0].setMap(null)
       });
       clearPinDisplay();
-      pinDisplay(mapsID);
+      myPinDisplay(mapsID);
       pinPainter(mapsID);
 
     })

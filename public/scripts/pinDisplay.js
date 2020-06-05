@@ -9,8 +9,6 @@ const createPinElement = function(pin) {
       <p class="map-description"> ${pin.description}
       </p>
     </div>
-    <button type="button" id="edit${pin.id}" class="btn btn-info">Edit</button>
-    <button type="button" id=delete${pin.id}class="btn btn-danger">Delete</button>
   </section>`
   return $pin;
 };

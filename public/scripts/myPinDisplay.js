@@ -19,9 +19,6 @@ const createMyPinElement = function(pin) {
   return $pin;
 };
 
-
-
-
 const renderMyPins = function(pins) {
 
   for (let i = 0; i < pins.length; i++) {
@@ -29,11 +26,9 @@ const renderMyPins = function(pins) {
     $('#pins-display').append(currentPin);
   }
   $('#pins-display').append(
-  '<button id="pin-submit" type="submit" class="btn btn-primary pins-button" onClick="openPinsDisplay()"> add more pins!</button>'
+  '<button id="pin-submit" type="submit" class="btn btn-primary pins-button" onClick="closePinsDisplay(); openNav2()"> add more pins!</button>'
   )
 };
-
-
 
 const myPinDisplay = function(mapId) {
 
@@ -58,6 +53,4 @@ const myPinDisplay = function(mapId) {
       });
     })
 }
-
-
 
