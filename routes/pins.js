@@ -77,8 +77,11 @@ module.exports = (db) => {
     const { pin_id } = req.query
     db.query(`DELETE
     FROM pins
-    WHERE pin.id = ${pin_id}
-    `)
+    WHERE pins.id = ${pin_id}
+    RETURNING *
+    `).then(data => {res.send(data)})
+    .catch(err => console.log(err)
+    );
     //a post request to change the details of a particular pin
     //this will come in with form data, and respond with a promise returning the edited table data
   });
